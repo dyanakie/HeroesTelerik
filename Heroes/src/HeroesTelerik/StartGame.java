@@ -1,9 +1,11 @@
 package HeroesTelerik;
 
+import HeroesTelerik.MainHero.Hero;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import MainHero.Hero;
+
 
 public class StartGame {
 

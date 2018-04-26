@@ -1,35 +1,41 @@
 package HeroesTelerik.MainHero;
 
 
+import HeroesTelerik.Army;
 import HeroesTelerik.Coordinate;
 import HeroesTelerik.Items.Item;
 
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Hero {
+    private static final int INITIAL_GOLD = 500;
+    private static final int INITIAL_LEVEL = 1;
     private static final int BASE_ATTACK = 5;
     private static final int BASE_DEFENCE = 5;
 
 
     private Coordinate coordinate;
+    private int level;
     private String name;
     private HeroClass heroClass;
     private int attack;
     private int defence;
     private List<Item> items;
-    private Slot slotOne;
-    private Slot slotTwo;
-    private Slot slotThree;
+    private Army army;
+    private int gold;
 
     public Hero(String name) {
         this.name = name;
         this.heroClass = HeroClass.randomHeroClass();
+        this.level = INITIAL_LEVEL;
         this.attack = BASE_ATTACK;
         this.defence = BASE_DEFENCE;
         this.items = new ArrayList<>();
-        this.slotOne = new Slot();
+        this.army = new Army();
+        this.gold = INITIAL_GOLD;
 
     }
 
@@ -39,6 +45,14 @@ public class Hero {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public int getAtack() {
@@ -59,6 +73,35 @@ public class Hero {
 
     public HeroClass getHeroClass() {
         return heroClass;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public void move(Coordinate moveTo) {
+        //TODO: Implement
+    }
+
+    public void getLoot(Item loot) {
+        items.add(loot);
+    }
+
+    public void getStats() {
+        System.out.println(toString());
+    }
+
+    public void levelUp() {
+        setLevel(getLevel() + 1);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Hero name: %s, Level:%d, Attack Skill:%d, Defence Skill:%d,Gold amount:%d", getName(), getLevel(), getAtack(), getDefence(), getGold());
     }
 
 
