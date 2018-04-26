@@ -21,6 +21,6 @@ public abstract class Medium extends  Creature {
 
     @Override
     public String getType() {
-        return super.getType();
+        return type;
     }
 }

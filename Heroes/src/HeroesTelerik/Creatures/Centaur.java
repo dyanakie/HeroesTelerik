@@ -1,13 +1,15 @@
 package HeroesTelerik.Creatures;
 
-public class Centaur extends Easy {
+public class Centaur extends Creature {
 
     private int health;
     private int damage;
     private String type;
+    private Creature creature;
 
     public Centaur(){
-        super();
+        this.health = 50;
+        this.damage = 10;
         this.type = "Centaur";
     }
 
@@ -23,4 +25,9 @@ public class Centaur extends Easy {
 
     public String getType(){
         return type;}
+
+    @Override
+    public Creature getType2() {
+        return creature;
+    }
 }

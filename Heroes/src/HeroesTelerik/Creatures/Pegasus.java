@@ -1,10 +1,11 @@
 package HeroesTelerik.Creatures;
 
-public class Pegasus extends Medium {
+public class Pegasus extends Creature {
 
     private int health;
     private int damage;
     private String type;
+    private Creature creature;
 
     public Pegasus(){
         this.health = 100;
@@ -14,6 +15,11 @@ public class Pegasus extends Medium {
 
     public String getType(){
         return type;
+    }
+
+    @Override
+    public Creature getType2() {
+        return creature;
     }
 
     public int getHealth() {

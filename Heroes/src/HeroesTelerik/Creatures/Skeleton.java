@@ -1,10 +1,11 @@
 package HeroesTelerik.Creatures;
 
-public class Skeleton extends Easy {
+public class Skeleton extends Creature {
 
     private int health;
     private int damage;
     private String type;
+    private Creature creature;
 
     public Skeleton(){
         this.health = 50;
@@ -14,6 +15,11 @@ public class Skeleton extends Easy {
 
     public String getType(){
         return type;
+    }
+
+    @Override
+    public Creature getType2() {
+        return creature;
     }
 
     @Override

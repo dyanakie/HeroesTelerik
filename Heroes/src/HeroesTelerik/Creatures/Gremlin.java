@@ -2,14 +2,16 @@ package HeroesTelerik.Creatures;
 
 import HeroesTelerik.Creatures.Easy;
 
-public class Gremlin extends Easy {
+public class Gremlin extends Creature {
 
     private int health;
     private int damage;
     private String type;
+    private Creature type2;
 
     public Gremlin(){
-        super();
+        this.damage = 10;
+        this.health = 50;
         this.type = "Gremlin";
 
     }
@@ -29,8 +31,8 @@ public class Gremlin extends Easy {
         return type;
     }
 
-
-
-
-
+    @Override
+    public Creature getType2() {
+        return type2;
+    }
 }

@@ -2,9 +2,9 @@ package HeroesTelerik.Creatures;
 
 public abstract class Easy extends Creature {
 
-    int health;
-    int damage;
-    String type;
+    private int health;
+    private int damage;
+    private String type;
 
     public Easy(){
 

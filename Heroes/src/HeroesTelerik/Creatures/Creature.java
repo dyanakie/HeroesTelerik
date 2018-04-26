@@ -2,18 +2,23 @@ package HeroesTelerik.Creatures;
 
 public abstract class Creature {
 
-    int health;
-    int damage;
-    String type;
+    private int health;
+    private int damage;
+    private String type;
+    private Creature type2;
 
     public Creature(){
 
     }
 
-    public String getType(){
-        return type;
-    }
+    public abstract String getType();
 
 
+    public abstract Creature getType2();
 
+
+   public abstract int getHealth();
+
+
+   public abstract int getDamage();
 }
