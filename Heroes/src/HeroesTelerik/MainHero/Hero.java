@@ -1,17 +1,19 @@
-package Hero;
+package HeroesTelerik.MainHero;
 
-import Items.Item;
+
+import HeroesTelerik.Coordinate;
+import HeroesTelerik.Items.Item;
 
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Hero {
     private static final int BASE_ATTACK = 5;
     private static final int BASE_DEFENCE = 5;
 
 
+    private Coordinate coordinate;
     private String name;
     private HeroClass heroClass;
     private int attack;
@@ -55,7 +57,9 @@ public class Hero {
         this.defence = defence;
     }
 
-
+    public HeroClass getHeroClass() {
+        return heroClass;
+    }
 
 
 

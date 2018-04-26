@@ -1,4 +1,4 @@
-package Creatures;
+package HeroesTelerik.Creatures;
 
 public abstract class Creature {
 }

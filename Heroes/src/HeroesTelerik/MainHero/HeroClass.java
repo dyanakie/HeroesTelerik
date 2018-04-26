@@ -1,4 +1,4 @@
-package Hero;
+package HeroesTelerik.MainHero;
 
 import java.util.Arrays;
 import java.util.Collections;
