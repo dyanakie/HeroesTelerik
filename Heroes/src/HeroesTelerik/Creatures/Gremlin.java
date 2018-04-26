@@ -6,9 +6,12 @@ public class Gremlin extends Easy {
 
     private int health;
     private int damage;
+    private String type;
 
     public Gremlin(){
         super();
+        this.type = "Gremlin";
+
     }
 
     @Override
@@ -20,6 +23,12 @@ public class Gremlin extends Easy {
     public int getDamage() {
         return damage;
     }
+
+
+    public String getType(){
+        return type;
+    }
+
 
 
 

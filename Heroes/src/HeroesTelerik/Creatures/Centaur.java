@@ -4,9 +4,11 @@ public class Centaur extends Easy {
 
     private int health;
     private int damage;
+    private String type;
 
     public Centaur(){
         super();
+        this.type = "Centaur";
     }
 
     @Override
@@ -18,4 +20,7 @@ public class Centaur extends Easy {
     public int getHealth() {
         return health;
     }
+
+    public String getType(){
+        return type;}
 }

@@ -4,6 +4,7 @@ public abstract class Easy extends Creature {
 
     int health;
     int damage;
+    String type;
 
     public Easy(){
 
@@ -20,4 +21,6 @@ public abstract class Easy extends Creature {
     public int getHealth() {
         return health;
     }
+
+    public String getType(){return type;}
 }
