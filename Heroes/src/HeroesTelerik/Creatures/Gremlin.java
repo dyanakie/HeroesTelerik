@@ -4,8 +4,8 @@ import HeroesTelerik.Creatures.Easy;
 
 public class Gremlin extends Easy {
 
-    int health;
-    int damage;
+    private int health;
+    private int damage;
 
     public Gremlin(){
         super();

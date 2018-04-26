@@ -1,6 +1,6 @@
 package HeroesTelerik.Creatures;
 
-public class Easy extends Creature {
+public abstract class Easy extends Creature {
 
     int health;
     int damage;

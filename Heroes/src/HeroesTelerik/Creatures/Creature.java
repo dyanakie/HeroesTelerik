@@ -6,8 +6,6 @@ public abstract class Creature {
     int damage;
 
     public Creature(){
-        this.health = 50;
-        this.damage = 10;
 
     }
 
