@@ -1,5 +1,7 @@
 package HeroesTelerik.Creatures;
 
+import java.util.Random;
+
 public class Skeleton extends Creature {
 
     private int health;
@@ -29,6 +31,7 @@ public class Skeleton extends Creature {
 
     @Override
     public int getDamage() {
-        return damage;
+        Random ra = new Random();
+        return ra.nextInt(this.damage-2)+this.damage+2;
     }
 }

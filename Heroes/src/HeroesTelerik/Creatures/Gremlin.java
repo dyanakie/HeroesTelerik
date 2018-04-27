@@ -2,6 +2,8 @@ package HeroesTelerik.Creatures;
 
 import HeroesTelerik.Creatures.Easy;
 
+import java.util.Random;
+
 public class Gremlin extends Creature {
 
     private int health;
@@ -23,7 +25,9 @@ public class Gremlin extends Creature {
 
     @Override
     public int getDamage() {
-        return damage;
+
+        Random ra = new Random();
+        return ra.nextInt(this.damage-2)+this.damage+2;
     }
 
 

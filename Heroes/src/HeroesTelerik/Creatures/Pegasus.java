@@ -1,6 +1,8 @@
 package HeroesTelerik.Creatures;
 
-public class Pegasus extends Creature {
+import java.util.Random;
+
+public class Pegasus extends Creature implements Specials {
 
     private int health;
     private int damage;
@@ -27,6 +29,12 @@ public class Pegasus extends Creature {
     }
 
     public int getDamage() {
-        return damage;
+        Random ra = new Random();
+        return ra.nextInt(this.damage-5)+this.damage+5;
+    }
+
+    @Override
+    public void hasSpecial(Creature_Specials special) {
+
     }
 }

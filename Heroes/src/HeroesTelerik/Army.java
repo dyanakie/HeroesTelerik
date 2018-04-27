@@ -58,7 +58,7 @@ public class Army {
             Slot1.add(creature);
         }
         Slot1Type = creature.getType();
-        creature1 = creature.getType2();
+      //  creature1 = creature.getType2();
     }
 
     public  void addSlot2(Creature creature, int number){         // Adds selected number of creatures in Slot2 and also changes slot2Type
@@ -66,7 +66,7 @@ public class Army {
             Slot2.add(creature);
         }
         Slot2Type = creature.getType();
-        creature2 = creature.getType2();
+      //  creature2 = creature.getType2();
     }
 
     public  void addSlot3(Creature creature, int number){           // Adds selected number of creatures in Slot3 and also changes slot3Type
@@ -74,7 +74,7 @@ public class Army {
             Slot3.add(creature);
         }
         Slot3Type = creature.getType();
-        creature3 = creature.getType2();
+     //   creature3 = creature.getType2();
     }
 
     public boolean checkSlotType(String type, int slotNumber){                 // Check if the type that is given matches the type of the given slot or if its empty also returns true
@@ -200,6 +200,7 @@ public class Army {
         if(slotNumber == 1){
 
             int damage = Slot1.get(0).getDamage()*getSlot1numbers();
+            System.out.print(getSlot1numbers() + " ");
             System.out.printf("%s inflicts ", getSlot1Type());
             System.out.println(damage + " damage!");
 
@@ -208,7 +209,9 @@ public class Army {
 
         if(slotNumber == 2){
 
-            int damage = Slot2.get(0).getDamage()*getSlot1numbers();
+            int damage = Slot2.get(0).getDamage()*getSlot2numbers();
+            System.out.print(getSlot2numbers() + " ");
+            System.out.printf("%s inflicts ", getSlot2Type());
             System.out.println("damage: " + damage);
 
             return damage;
@@ -216,7 +219,9 @@ public class Army {
 
         if(slotNumber == 3){
 
-            int damage = Slot3.get(0).getDamage()*getSlot1numbers();
+            int damage = Slot3.get(0).getDamage()*getSlot3numbers();
+            System.out.print(getSlot3numbers() + " ");
+            System.out.printf("%s inflicts ", getSlot3Type());
             System.out.println("damage: " + damage);
 
             return damage;

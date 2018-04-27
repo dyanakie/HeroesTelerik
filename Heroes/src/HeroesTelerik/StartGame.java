@@ -6,6 +6,7 @@ import HeroesTelerik.MainHero.Hero;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Random;
 
 
 public class StartGame {
@@ -17,16 +18,16 @@ public class StartGame {
         Hero Conan = new Hero("Conan");
 
         Army heroArmy = new Army();
-        heroArmy.addSlot1(new Gremlin(), 10);
-        heroArmy.addSlot2(new Pegasus(), 15);
-        heroArmy.addSlot3(new Griffon(), 5);
+        heroArmy.addSlot1(new Gremlin(), 40);
+        heroArmy.addSlot2(new Pegasus(), 30);
+        heroArmy.addSlot3(new Griffon(), 10);
 
       //  heroArmy.showWholeArmy();
          Army enemyArmy = new Army();
 
-         enemyArmy.addSlot1(new Griffon(), 5);
+         enemyArmy.addSlot1(new Centaur(), 55);
          enemyArmy.addSlot2(new Vampire(), 7);
-         enemyArmy.addSlot3(new Centaur(), 3);
+         enemyArmy.addSlot3(new Dragon(), 5);
 
 
          battleArmies(heroArmy, enemyArmy);
@@ -65,6 +66,12 @@ public class StartGame {
 
             }
 
+            if(army2.checkDefeated()){
+                break;
+            }
+            System.out.println("ENEMY ATTACKS!");
+            computerAttacks(army1, army2);
+
 
         }
 
@@ -84,8 +91,6 @@ public class StartGame {
         System.out.println();
         System.out.println();
         System.out.println("          YOUR FORCES ENGAGE THE ENEMY    ");
-        System.out.println();
-        System.out.println("          HERE IS THE BATTLE ORDER COMMANDER  ");
         System.out.println();
         System.out.println("     YOUR ARMY                          ENEMY ARMY     ");
         System.out.println();
@@ -124,5 +129,41 @@ public class StartGame {
 
         return true;
 
+    }
+
+    public static void computerAttacks(Army army1, Army army2){
+
+        boolean valid_attack = false;
+        while(!valid_attack) {
+            int[] choice = new int[2];                                                                // gets computer choice of attacking creatures and who will they attack
+            Random random = new Random();
+
+            choice[0] = random.nextInt(3) + 1;
+            choice[1] = random.nextInt(3) + 1;
+
+            if (!checkValidAttack(choice, army2, army1)) {                                           // if the target stack is empty or your stack slot is empty repeats
+             //   System.out.println("INVALID CHOICE ! Check Forces sir!");
+                continue;
+            }
+            valid_attack = true;
+
+            int damage = army2.inflictDamage(choice[0]);
+
+
+
+            switch (choice[1]) {
+
+                case 1:
+                    army1.setSlot1(damage);
+                    break;
+                case 2:
+                    army1.setSlot2(damage);
+                    break;
+                case 3:
+                    army1.setSlot3(damage);
+                    break;
+
+            }
+        }
     }
 }

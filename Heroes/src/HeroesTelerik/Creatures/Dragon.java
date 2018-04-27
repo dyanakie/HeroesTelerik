@@ -2,26 +2,25 @@ package HeroesTelerik.Creatures;
 
 import java.util.Random;
 
-public class Vampire extends  Creature{
+public class Dragon extends Creature {
 
     private int health;
     private int damage;
     private String type;
-    private Creature creature;
 
-    public Vampire(){
-        this.health = 100;
-        this.damage = 20;
-        this.type = "Vampire";
+    public Dragon(){
+        this.health = 250;
+        this.damage = 45;
+        this.type = "Dragon";
     }
-
-    public String getType(){
+    @Override
+    public String getType() {
         return type;
     }
 
     @Override
     public Creature getType2() {
-        return creature;
+        return null;
     }
 
     @Override
@@ -32,6 +31,6 @@ public class Vampire extends  Creature{
     @Override
     public int getDamage() {
         Random ra = new Random();
-        return ra.nextInt(this.damage-5)+this.damage+5;
+        return ra.nextInt(this.damage-10)+this.damage+10;
     }
 }
