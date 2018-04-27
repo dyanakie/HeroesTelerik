@@ -28,8 +28,16 @@ public class StartGame {
          enemyArmy.addSlot2(new Vampire(), 7);
          enemyArmy.addSlot3(new Dragon(), 5);
 
+         Map map = new Map();
 
-         BattleScene.battleArmies(heroArmy, enemyArmy);
+         map.printMap(Conan.getCoordinate().x, Conan.getCoordinate().y);
+
+         Conan.move('w');
+
+         map.printMap(Conan.getCoordinate().x, Conan.getCoordinate().y);
+
+
+       //  BattleScene.battleArmies(heroArmy, enemyArmy);
 
     }
 

@@ -94,8 +94,21 @@ public class Hero {
         this.gold = gold;
     }
 
-    public void move(Coordinate moveTo) {
-        //TODO: Implement
+    public void move(char A) {
+
+            if(A == 'w'){
+                coordinate.setX(coordinate.getX()-1);
+            }
+            if(A == 's'){
+                coordinate.setX(coordinate.getX()+1);
+            }
+            if(A == 'd'){
+                coordinate.setY(coordinate.getY()+1);
+            }
+            if(A == 'a'){
+                coordinate.setY(coordinate.getY()-1);
+
+        }
     }
 
     public void getLoot(Item loot) {
