@@ -50,6 +50,14 @@ public class Hero {
         this.name = name;
     }
 
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public void setCoordinate(Coordinate coordinate) {
+        this.coordinate = coordinate;
+    }
+
     public int getLevel() {
         return level;
     }
