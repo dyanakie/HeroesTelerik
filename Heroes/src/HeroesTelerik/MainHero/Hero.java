@@ -4,6 +4,7 @@ package HeroesTelerik.MainHero;
 import HeroesTelerik.Army;
 import HeroesTelerik.Coordinate;
 import HeroesTelerik.Items.Item;
+import HeroesTelerik.Map;
 
 
 import java.sql.SQLOutput;
@@ -100,6 +101,8 @@ public class Hero {
     }
 
     public void move(char A) {
+
+            Map.turns++;
 
             if(A == 'w'){
                 coordinate.setX(coordinate.getX()-1);

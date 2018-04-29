@@ -1,6 +1,7 @@
 package HeroesTelerik;
 
 import HeroesTelerik.MainHero.Hero;
+import HeroesTelerik.MainHero.Statistics;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,10 +39,9 @@ public class Menu {
         System.out.println(" What a tragedy!The magic school Telerik will face ruin if");
         System.out.println(" it is not returned in time.You have been chosen to travel to the ");
         System.out.println(" charLand where the queen reigns.\n");
-        System.out.println(" O'Brave will you have the strenght?Will all count on you!");
+        System.out.println(" O'Brave warrior will you have the strenght?All counts on you!");
         System.out.println();
-        System.out.println(" Press enter to continue...");
-        br.readLine();
+        pressKey();
 
 
     }
@@ -61,10 +61,10 @@ public class Menu {
             System.out.println("        WELCOME TO HEROES OF TELERIK        ");
             System.out.println("                  P                   MENU:");
             System.out.println("               P /\\  P           1. New Game");
-            System.out.println("              /\\|  |/\\           2. Inspect Hero");
-            System.out.println("           [] ||_/\\_|| []        3. Inspect Forces");
-            System.out.println("           ||_||____||_||        4. Options");
-            System.out.println("           ||____[]____||        5. Exit");
+            System.out.println("              /\\|  |/\\           2. Options");
+            System.out.println("           [] ||_/\\_|| []        3. Exit");
+            System.out.println("           ||_||____||_||        ");
+            System.out.println("           ||____[]____||        ");
             System.out.println("           {::     \\__    }");
             System.out.println("       ___  \\v:    .'\"  _V ___");
             System.out.println("      (      \\_      __/  --  )_");
@@ -79,8 +79,16 @@ public class Menu {
             switch (choice) {
                 case '1':
                     return 1;
+                case '2':
+                    System.out.println("Graphics: low medium high");
+                    System.out.println("...");
+                    continue;
 
-                default: return 1;
+                case '3':
+                    System.exit(0);
+
+                default:
+                    System.out.println("Not a valid choice!");
 
 
             }
@@ -124,8 +132,17 @@ public class Menu {
                 case '1':
                     return 1;
 
+                case '2':
+                    Statistics.heroStats(hero);
+                    continue;
+
                 case '4':
                     Shop.menu(hero);
+                    continue;
+
+                case '5':
+                    System.exit(0);
+
 
 
             }
@@ -133,5 +150,12 @@ public class Menu {
 
         return 1;
 
+    }
+
+    public static void pressKey()throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println(" Press enter to continue...");
+        br.readLine();
     }
 }

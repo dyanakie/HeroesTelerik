@@ -5,7 +5,7 @@ import java.util.Random;
 public class Map {
 
     private char[][] map;
-    static int turns = 0;
+    public static int turns = 0;
 
 
     public Map(){
@@ -32,8 +32,6 @@ public class Map {
 
 
     public void printMap(int x, int y, Army army){
-
-        turns++;
 
         System.out.println("               HEROES OF TELERIK            ");
         System.out.println("********************************************");

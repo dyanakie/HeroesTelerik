@@ -18,7 +18,9 @@ public class Shop {
 
             System.out.println("********************************************");
             System.out.println("********************************************");
-            System.out.println("      `'::::.             Gold: " + hero.getGold());
+            System.out.println("              THE SHOP");
+            System.out.println();
+            System.out.println("      `'::::.                 Your Gold: " + hero.getGold());
             System.out.println("        _____A_                       ");
             System.out.println("       /      /\\                 1. Buy Forces    ");
             System.out.println("    __/__/\\__/  \\___              2. Return");
