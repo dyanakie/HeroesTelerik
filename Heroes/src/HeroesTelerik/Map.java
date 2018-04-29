@@ -31,7 +31,7 @@ public class Map {
     }
 
 
-    public void printMap(int x, int y){
+    public void printMap(int x, int y, Army army){
 
         turns++;
 
@@ -51,7 +51,7 @@ public class Map {
             System.out.println();
         }
         System.out.println("********************************************");
-        System.out.println("ARMY:  |15Elf Archers|45Elf Pikemen|120Pixies|");
+        System.out.println("ARMY:  |" + army.getSlot1numbers() + army.getSlot1Type() + "|" + army.getSlot2numbers()+army.getSlot2Type() + "|" + army.getSlot3numbers()+army.getSlot3Type() + "|");
         System.out.println("x: " + x + " y: " + y);
     }
 }

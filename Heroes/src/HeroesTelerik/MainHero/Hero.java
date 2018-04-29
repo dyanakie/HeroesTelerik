@@ -26,7 +26,7 @@ public class Hero {
     private int attack;
     private int defence;
     private List<Item> items;
-    private Army army;
+    public Army army;
     private int gold;
 
     public Hero(String name) {
@@ -41,6 +41,11 @@ public class Hero {
         this.gold = INITIAL_GOLD;
 
     }
+
+    public void setArmy(Army army) {
+        this.army = army;
+    }
+
 
     public String getName() {
         return name;

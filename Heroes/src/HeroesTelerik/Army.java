@@ -77,26 +77,25 @@ public class Army {
      //   creature3 = creature.getType2();
     }
 
-    public boolean checkSlotType(String type, int slotNumber){                 // Check if the type that is given matches the type of the given slot or if its empty also returns true
+    public int checkSlotType(String type){                 // Check if the type that is given matches the type of the given slot or if its empty also returns true
 
-        switch (slotNumber){
 
-            case 1: if(type.equals(getSlot1Type()) || getSlot1Type().equals("")){
-                return true;
+
+        if(type.equals(getSlot1Type()) || getSlot1Type().equals("")){
+                return 1;
             }
-                return false;
-            case 2: if(type.equals(getSlot2Type()) || getSlot2Type().equals("")){
-                return true;
-            }
-                return false;
-            case 3: if(type.equals(getSlot2Type()) || getSlot2Type().equals("")){
-                    return true;
-                }
-                return false;
-            default:
-                return false;
 
-        }
+        if(type.equals(getSlot2Type()) || getSlot2Type().equals("")){
+                return 2;
+            }
+
+         if(type.equals(getSlot3Type()) || getSlot3Type().equals("")) {
+             return 3;
+         }
+
+
+         return 0;
+
 
     }
 
@@ -230,4 +229,22 @@ public class Army {
 
         return 0;
     }
+
+    public void addCreature(int number){
+
+        switch (number){
+
+            case 1:
+                Slot1.add(Slot1.get(0).getType2());
+                return;
+            case 2:
+                Slot2.add(Slot2.get(0).getType2());
+            case 3:
+                Slot3.add(Slot3.get(0).getType2());
+
+        }
+
+    }
+
+
 }
