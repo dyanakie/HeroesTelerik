@@ -1,25 +1,24 @@
 package HeroesTelerik.Items;
 
+import HeroesTelerik.MainHero.Hero;
+
 /**
  * Created by Joro on 27/04/2018
  */
-public abstract class Potion extends Item{
-    int health;
-    int experience;
+public abstract class Potion extends Item implements Consumable{
+    int quantity;
 
-    public int getHealth() {
-        return health;
+    public Potion(){
+
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public int getExperience() {
-        return experience;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public void setExperience(int experience) {
-        this.experience = experience;
-    }
+    public abstract void usePotion(Hero hero);
 }

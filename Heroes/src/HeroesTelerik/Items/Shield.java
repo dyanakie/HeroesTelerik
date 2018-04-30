@@ -6,18 +6,15 @@ package HeroesTelerik.Items;
 public class Shield extends DefensiveItem {
 
     public Shield(String name, int defense, int price,double weight){
+        super();
         this.setItemName(name);
         this.setDefense(defense);
         this.setPrice(price);
         this.setWeight(weight);
 
     }
-
-    public void equipItem(){
-
-    }
-
-    public void dropItem(){
-
+    @Override
+    public String toString() {
+        return String.format("Weapon: %s, Damage: %d, Price: %d",getClass().getSimpleName(),getDefense(),getPrice());
     }
 }

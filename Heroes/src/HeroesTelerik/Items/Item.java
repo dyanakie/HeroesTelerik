@@ -1,11 +1,13 @@
 package HeroesTelerik.Items;
+
+import java.awt.*;
 import java.util.Random;
 
 public abstract class Item {
-    private final int LENGTH = 20;
+    private final int nameLength = 20;
     private String itemName;
     private int price;
-    private long itemId;
+    private int itemId;
     private double weight;
 
     public Item(){
@@ -15,39 +17,44 @@ public abstract class Item {
     public String getItemName() {
         return itemName;
     }
+
     public void setItemName(String itemName) {
-        if(itemName.length()<=LENGTH) {
+        if(itemName.length()<=nameLength) {
             this.itemName = itemName;
         }
         else{
             System.out.println("ItemName is too long");
         }
     }
-    public long getItemId() {
+
+    public int getItemId() {
         return itemId;
     }
+
     private void setItemId() {
         this.itemId = generateId();
     }
+
     public int getPrice() {
         return price;
     }
+
     public void setPrice(int price) {
         this.price = price;
     }
+
     public double getWeight() {
         return weight;
     }
+
     public void setWeight(double weight) {
         this.weight = weight;
     }
 
-    public final long generateId()
+    public final int generateId()
     {
-        Random rnd = new Random(System.currentTimeMillis());
-        return  rnd.nextLong();
+        double x = MouseInfo.getPointerInfo().getLocation().getX();
+        Random rnd = new Random((int)x);
+        return  rnd.nextInt(10000000)+20000000;
     }
-
-    //public abstract void addBonus(Hero hero);
-
 }

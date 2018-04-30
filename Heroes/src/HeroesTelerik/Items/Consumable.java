@@ -6,3 +6,11 @@ package HeroesTelerik.Items;
 public interface Consumable {
 
 }
+
+
+//implement comparable
+//equip item
+//consume item
+//toString
+//objects
+//exception class custom
