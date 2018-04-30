@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Map {
 
-    private char[][] map;
+    public static char[][] map;
     public static int turns = 0;
 
 

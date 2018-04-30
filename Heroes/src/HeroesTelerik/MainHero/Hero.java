@@ -105,15 +105,31 @@ public class Hero {
             Map.turns++;
 
             if(A == 'w'){
+                if(!checkCoordinate(getCoordinate().getX()-1, getCoordinate().getY())){
+                    System.out.println("Invalid move!");
+                    return;
+                }
                 coordinate.setX(coordinate.getX()-1);
             }
             if(A == 's'){
+                if(!checkCoordinate(getCoordinate().getX()+1, getCoordinate().getY())){
+                    System.out.println("Invalid move!");
+                    return;
+                }
                 coordinate.setX(coordinate.getX()+1);
             }
             if(A == 'd'){
+                if(!checkCoordinate(getCoordinate().getX(), getCoordinate().getY()+1)){
+                    System.out.println("Invalid move!");
+                    return;
+                }
                 coordinate.setY(coordinate.getY()+1);
             }
             if(A == 'a'){
+                if(!checkCoordinate(getCoordinate().getX()-1, getCoordinate().getY()-1)){
+                    System.out.println("Invalid move!");
+                    return;
+                }
                 coordinate.setY(coordinate.getY()-1);
 
         }
@@ -134,6 +150,21 @@ public class Hero {
     @Override
     public String toString() {
         return String.format("Hero name: %s, Level:%d, Attack Skill:%d, Defence Skill:%d,Gold amount:%d", getName(), getLevel(), getAtack(), getDefence(), getGold());
+    }
+
+
+    public boolean checkCoordinate(int x, int y){
+
+        if(x >= Map.map.length || x < 0 || y >= Map.map[x].length || y < 0){
+            return false;
+        }
+
+        if(Map.map[x][y] == '#' || Map.map[x][y] == '^'){
+            return false;
+        }
+
+        return true;
+
     }
 
 

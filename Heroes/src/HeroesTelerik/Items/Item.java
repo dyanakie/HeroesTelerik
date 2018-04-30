@@ -23,7 +23,7 @@ public abstract class Item {
             this.itemName = itemName;
         }
         else{
-            System.out.println("ItemName is too long");
+            System.out.println("Item Name is too long");
         }
     }
 

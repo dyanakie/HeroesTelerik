@@ -44,6 +44,8 @@ public class StartGame {
              System.out.println("M - Menu  E - Exit");
              System.out.print("Please enter a direction to move(w,a,s,d): ");
              char newDirection = br.readLine().charAt(0);
+
+
              if(newDirection == 'E'){
                  break;
              }
