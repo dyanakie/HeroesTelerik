@@ -4,12 +4,12 @@ import HeroesTelerik.Creatures.Easy;
 
 import java.util.Random;
 
-public class Gremlin extends Creature {
+public class Gremlin extends Easy {
 
     private int health;
     private int damage;
     private String type;
-    private Creature type2;
+    private Creature creature;
 
     public Gremlin(){
         this.damage = 10;
@@ -24,6 +24,11 @@ public class Gremlin extends Creature {
     }
 
     @Override
+    public Creature getType2() {
+        return creature;
+    }
+
+    @Override
     public int getDamage() {
 
         Random ra = new Random();
@@ -35,8 +40,4 @@ public class Gremlin extends Creature {
         return type;
     }
 
-    @Override
-    public Creature getType2() {
-        return type2;
-    }
 }

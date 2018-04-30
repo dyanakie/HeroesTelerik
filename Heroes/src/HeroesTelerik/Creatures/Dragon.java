@@ -2,11 +2,12 @@ package HeroesTelerik.Creatures;
 
 import java.util.Random;
 
-public class Dragon extends Creature {
+public class Dragon extends Hard {
 
     private int health;
     private int damage;
     private String type;
+    private Creature creature;
 
     public Dragon(){
         this.health = 250;
@@ -19,13 +20,13 @@ public class Dragon extends Creature {
     }
 
     @Override
-    public Creature getType2() {
-        return null;
+    public int getHealth() {
+        return health;
     }
 
     @Override
-    public int getHealth() {
-        return health;
+    public Creature getType2() {
+        return creature;
     }
 
     @Override

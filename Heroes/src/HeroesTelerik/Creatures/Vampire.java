@@ -2,7 +2,7 @@ package HeroesTelerik.Creatures;
 
 import java.util.Random;
 
-public class Vampire extends  Creature{
+public class Vampire extends  Medium{
 
     private int health;
     private int damage;
@@ -20,13 +20,13 @@ public class Vampire extends  Creature{
     }
 
     @Override
-    public Creature getType2() {
-        return creature;
+    public int getHealth() {
+        return health;
     }
 
     @Override
-    public int getHealth() {
-        return health;
+    public Creature getType2() {
+        return creature;
     }
 
     @Override

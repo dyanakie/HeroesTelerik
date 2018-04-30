@@ -17,6 +17,7 @@ public class Menu {
         System.out.println("********************************************");
         System.out.println("********************************************");
         System.out.println("        WELCOME TO HEROES OF TELERIK        ");
+        System.out.println("      created by Drago, Joro and Misho");
         System.out.println();
 
         System.out.println("|\\             //");

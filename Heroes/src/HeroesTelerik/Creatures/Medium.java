@@ -11,16 +11,8 @@ public abstract class Medium extends  Creature {
         this.damage = 20;
     }
 
-    public int getDamage() {
-        return damage;
-    }
+    public abstract int getDamage();
 
-    public int getHealth() {
-        return health;
-    }
+    public abstract int getHealth();
 
-    @Override
-    public String getType() {
-        return type;
-    }
 }

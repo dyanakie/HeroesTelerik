@@ -29,13 +29,13 @@ public class BattleScene {
             switch (choice[1]){
 
                 case 1:
-                    army2.setSlot1(damage);
+                    army2.setSlotOne(damage);
                     break;
                 case 2:
-                    army2.setSlot2(damage);
+                    army2.setSlotTwo(damage);
                     break;
                 case 3:
-                    army2.setSlot3(damage);
+                    army2.setSlotThree(damage);
                     break;
 
             }
@@ -68,9 +68,9 @@ public class BattleScene {
         System.out.println();
         System.out.println("     YOUR ARMY                          ENEMY ARMY     ");
         System.out.println();
-        System.out.printf(" 1.  %d %s                              1.  %d %s          \n", army1.getSlot1numbers(), army1.getSlot1Type(), army2.getSlot1numbers(), army2.getSlot1Type());
-        System.out.printf(" 2.  %d %s                              2.  %d %s          \n", army1.getSlot2numbers(), army1.getSlot2Type(), army2.getSlot2numbers(), army2.getSlot2Type());
-        System.out.printf(" 3.  %d %s                              3.  %d %s          \n", army1.getSlot3numbers(), army1.getSlot3Type(), army2.getSlot3numbers(), army2.getSlot3Type());
+        System.out.printf(" 1.  %d %s                              1.  %d %s          \n", army1.getSlot1numbers(), army1.getSlotOneType(), army2.getSlot1numbers(), army2.getSlotOneType());
+        System.out.printf(" 2.  %d %s                              2.  %d %s          \n", army1.getSlot2numbers(), army1.getSlotTwoType(), army2.getSlot2numbers(), army2.getSlotTwoType());
+        System.out.printf(" 3.  %d %s                              3.  %d %s          \n", army1.getSlot3numbers(), army1.getSlotThreeType(), army2.getSlot3numbers(), army2.getSlotThreeType());
         System.out.println();
         System.out.println();
         System.out.println("It is your turn..");
@@ -128,13 +128,13 @@ public class BattleScene {
             switch (choice[1]) {
 
                 case 1:
-                    army1.setSlot1(damage);
+                    army1.setSlotOne(damage);
                     break;
                 case 2:
-                    army1.setSlot2(damage);
+                    army1.setSlotTwo(damage);
                     break;
                 case 3:
-                    army1.setSlot3(damage);
+                    army1.setSlotThree(damage);
                     break;
 
             }

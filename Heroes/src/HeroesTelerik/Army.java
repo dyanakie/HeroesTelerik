@@ -1,95 +1,76 @@
 package HeroesTelerik;
 
 import HeroesTelerik.Creatures.Creature;
-import HeroesTelerik.MainHero.Slot;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Army {
 
-    List<Creature> Slot1;                               // The army has 3 slots which can be of different Type of Creatures
-    String Slot1Type;
-    Creature creature1;
-    List<Creature> Slot2;
-    String Slot2Type;
-    Creature creature2;
-    List<Creature> Slot3;
-    String Slot3Type;
-    Creature creature3;
+    List<Creature> slotOne;                               // The army has 3 slots which can be of different Type of Creatures
+    String slotOneType;
+    List<Creature> slotTwo;
+    String slotTwoType;
+    List<Creature> slotThree;
+    String slotThreeType;
     boolean defeated;
 
     public Army(){
 
-        Slot1 = new ArrayList<Creature>();
-        Slot2 = new ArrayList<Creature>();
-        Slot3 = new ArrayList<Creature>();
-        Slot1Type = "";
+        slotOne = new ArrayList<Creature>();
+        slotTwo = new ArrayList<Creature>();
+        slotThree = new ArrayList<Creature>();
+        slotOneType = "";
         this.defeated = false;
 
     }
 
-    public String getSlot1Type() {
-        return Slot1Type;
-    }      // Check and returns Slot1Type String
+    public String getSlotOneType() {
+        return slotOneType;
+    }      // Check and returns slotOneType String
 
-    public String getSlot2Type() {
-        return Slot2Type;
+    public String getSlotTwoType() {
+        return slotTwoType;
     }
 
-    public String getSlot3Type() {
-        return Slot3Type;
+    public String getSlotThreeType() {
+        return slotThreeType;
     }
 
-    public Creature getCreature1() {
-        return creature1;
-    }
-
-    public Creature getCreature2() {
-        return creature2;
-    }
-
-    public Creature getCreature3() {
-        return creature3;
-    }
-
-    public  void addSlot1(Creature creature, int number){         // Adds selected number of creatures in Slot1 and also changes slot1Type
+    public  void addSlot1(Creature creature, int number){         // Adds selected number of creatures in slotOne and also changes slot1Type
         for(int i = 0; i < number; i++) {
-            Slot1.add(creature);
+            slotOne.add(creature);
         }
-        Slot1Type = creature.getType();
-      //  creature1 = creature.getType2();
+        slotOneType = creature.getType();
     }
 
-    public  void addSlot2(Creature creature, int number){         // Adds selected number of creatures in Slot2 and also changes slot2Type
+    public  void addSlot2(Creature creature, int number){         // Adds selected number of creatures in slotTwo and also changes slot2Type
         for(int i = 0; i < number; i++) {
-            Slot2.add(creature);
+            slotTwo.add(creature);
         }
-        Slot2Type = creature.getType();
-      //  creature2 = creature.getType2();
+        slotTwoType = creature.getType();
     }
 
-    public  void addSlot3(Creature creature, int number){           // Adds selected number of creatures in Slot3 and also changes slot3Type
+    public  void addSlot3(Creature creature, int number){           // Adds selected number of creatures in slotThree and also changes slot3Type
         for(int i = 0; i < number; i++) {
-            Slot3.add(creature);
+            slotThree.add(creature);
         }
-        Slot3Type = creature.getType();
-     //   creature3 = creature.getType2();
+        slotThreeType = creature.getType();
     }
 
     public int checkSlotType(String type){                 // Check if the type that is given matches the type of the given slot or if its empty also returns true
 
 
 
-        if(type.equals(getSlot1Type()) || getSlot1Type().equals("")){
+        if(type.equals(getSlotOneType()) || getSlotOneType().equals("")){
                 return 1;
             }
 
-        if(type.equals(getSlot2Type()) || getSlot2Type().equals("")){
+        if(type.equals(getSlotTwoType()) || getSlotTwoType().equals("")){
                 return 2;
             }
 
-         if(type.equals(getSlot3Type()) || getSlot3Type().equals("")) {
+         if(type.equals(getSlotThreeType()) || getSlotThreeType().equals("")) {
              return 3;
          }
 
@@ -124,25 +105,25 @@ public class Army {
     }
 
     public int getSlot1numbers() {
-        return Slot1.size();
+        return slotOne.size();
     }
 
     public int getSlot2numbers() {
-        return Slot2.size();
+        return slotTwo.size();
     }
 
     public int getSlot3numbers() {
-        return Slot3.size();
+        return slotThree.size();
     }
 
-    public void setSlot1(int damage) {
+    public void setSlotOne(int damage) {
 
-        int dead = damage/Slot1.get(0).getHealth();
+        int dead = damage/ slotOne.get(0).getHealth();
         int dead_new = 0;
-        String monster = Slot1.get(0).getType();
+        String monster = slotOne.get(0).getType();
 
-        while(!Slot1.isEmpty() && dead > 0){
-            Slot1.remove(Slot1.size()-1);
+        while(!slotOne.isEmpty() && dead > 0){
+            slotOne.remove(slotOne.size()-1);
             dead--;
             dead_new++;
         }
@@ -150,14 +131,14 @@ public class Army {
         System.out.println(dead_new + " " + monster + " dead!");
     }
 
-    public void setSlot2(int damage) {
+    public void setSlotTwo(int damage) {
 
-        int dead = damage/Slot2.get(0).getHealth();
+        int dead = damage/ slotTwo.get(0).getHealth();
         int dead_new = 0;
-        String monster = Slot2.get(0).getType();
+        String monster = slotTwo.get(0).getType();
 
-        while(!Slot2.isEmpty() && dead > 0){
-            Slot2.remove(Slot2.size()-1);
+        while(!slotTwo.isEmpty() && dead > 0){
+            slotTwo.remove(slotTwo.size()-1);
             dead--;
             dead_new++;
         }
@@ -165,14 +146,14 @@ public class Army {
         System.out.println(dead_new + " " + monster + " dead!");
     }
 
-    public void setSlot3(int damage) {
+    public void setSlotThree(int damage) {
 
-        int dead = damage/Slot3.get(0).getHealth();
+        int dead = damage/ slotThree.get(0).getHealth();
         int dead_new = 0;
-        String monster = Slot3.get(0).getType();
+        String monster = slotThree.get(0).getType();
 
-        while(!Slot3.isEmpty() && dead > 0){
-            Slot3.remove(Slot3.size()-1);
+        while(!slotThree.isEmpty() && dead > 0){
+            slotThree.remove(slotThree.size()-1);
             dead--;
             dead_new++;
         }
@@ -181,9 +162,9 @@ public class Army {
     }
 
     public void showWholeArmy(){                                                                // Prints the current army for developing reasons :)
-        System.out.println("You have " + getSlot1numbers() + " of " + getSlot1Type());
-        System.out.println("You have " + getSlot2numbers() + " of " + getSlot2Type());
-        System.out.println("You have " + getSlot3numbers() + " of " + getSlot3Type());
+        System.out.println("You have " + getSlot1numbers() + " of " + getSlotOneType());
+        System.out.println("You have " + getSlot2numbers() + " of " + getSlotTwoType());
+        System.out.println("You have " + getSlot3numbers() + " of " + getSlotThreeType());
     }
 
     public boolean checkDefeated(){                                                           // Check if the army is defeated
@@ -198,9 +179,9 @@ public class Army {
 
         if(slotNumber == 1){
 
-            int damage = Slot1.get(0).getDamage()*getSlot1numbers();
+            int damage = slotOne.get(0).getDamage()*getSlot1numbers();
             System.out.print(getSlot1numbers() + " ");
-            System.out.printf("%s inflicts ", getSlot1Type());
+            System.out.printf("%s inflicts ", getSlotOneType());
             System.out.println(damage + " damage!");
 
             return damage;
@@ -208,9 +189,9 @@ public class Army {
 
         if(slotNumber == 2){
 
-            int damage = Slot2.get(0).getDamage()*getSlot2numbers();
+            int damage = slotTwo.get(0).getDamage()*getSlot2numbers();
             System.out.print(getSlot2numbers() + " ");
-            System.out.printf("%s inflicts ", getSlot2Type());
+            System.out.printf("%s inflicts ", getSlotTwoType());
             System.out.println("damage: " + damage);
 
             return damage;
@@ -218,9 +199,9 @@ public class Army {
 
         if(slotNumber == 3){
 
-            int damage = Slot3.get(0).getDamage()*getSlot3numbers();
+            int damage = slotThree.get(0).getDamage()*getSlot3numbers();
             System.out.print(getSlot3numbers() + " ");
-            System.out.printf("%s inflicts ", getSlot3Type());
+            System.out.printf("%s inflicts ", getSlotThreeType());
             System.out.println("damage: " + damage);
 
             return damage;
@@ -235,12 +216,12 @@ public class Army {
         switch (number){
 
             case 1:
-                Slot1.add(Slot1.get(0).getType2());
+                slotOne.add(slotOne.get(0).getType2());
                 return;
             case 2:
-                Slot2.add(Slot2.get(0).getType2());
+                slotTwo.add(slotTwo.get(0).getType2());
             case 3:
-                Slot3.add(Slot3.get(0).getType2());
+                slotThree.add(slotThree.get(0).getType2());
 
         }
 

@@ -49,7 +49,7 @@ public class Map {
             System.out.println();
         }
         System.out.println("********************************************");
-        System.out.println("ARMY:  |" + army.getSlot1numbers() + army.getSlot1Type() + "|" + army.getSlot2numbers()+army.getSlot2Type() + "|" + army.getSlot3numbers()+army.getSlot3Type() + "|");
+        System.out.println("ARMY:  |" + army.getSlot1numbers() + army.getSlotOneType() + "|" + army.getSlot2numbers()+army.getSlotTwoType() + "|" + army.getSlot3numbers()+army.getSlotThreeType() + "|");
         System.out.println("x: " + x + " y: " + y);
     }
 }

@@ -2,7 +2,7 @@ package HeroesTelerik.Creatures;
 
 import java.util.Random;
 
-public class Centaur extends Creature {
+public class Centaur extends Easy {
 
     private int health;
     private int damage;
@@ -26,11 +26,12 @@ public class Centaur extends Creature {
         return health;
     }
 
-    public String getType(){
-        return type;}
-
     @Override
     public Creature getType2() {
         return creature;
     }
+
+    public String getType(){
+        return type;}
+
 }

@@ -13,11 +13,9 @@ public abstract class Creature {
 
     public abstract String getType();
 
-
-    public abstract Creature getType2();
-
-
    public abstract int getHealth();
+
+   public abstract Creature getType2();
 
 
    public abstract int getDamage();

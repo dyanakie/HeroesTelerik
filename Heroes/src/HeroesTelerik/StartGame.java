@@ -20,7 +20,7 @@ public class StartGame {
         Conan.setArmy(heroArmy);
         heroArmy.addSlot1(new Gremlin(), 40);
         heroArmy.addSlot2(new Pegasus(), 30);
-        heroArmy.addSlot3(new Griffon(), 10);
+        heroArmy.addSlot3(new Hydra(), 7);
 
       //  heroArmy.showWholeArmy();
          Army enemyArmy = new Army();
@@ -30,8 +30,6 @@ public class StartGame {
          enemyArmy.addSlot3(new Dragon(), 5);
 
          Map map = new Map();
-
-         map.printMap(Conan.getCoordinate().x, Conan.getCoordinate().y, heroArmy);
 
 
          Menu.newGameScreen();
