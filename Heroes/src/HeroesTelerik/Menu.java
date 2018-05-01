@@ -136,6 +136,9 @@ public class Menu {
                 case '2':
                     Statistics.heroStats(hero);
                     continue;
+                case '3':
+                    ArmyDetails.showForces(hero);
+                    continue;
 
                 case '4':
                     Shop.menu(hero);

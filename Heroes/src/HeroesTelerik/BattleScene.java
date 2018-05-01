@@ -1,5 +1,7 @@
 package HeroesTelerik;
 
+import HeroesTelerik.MainHero.Hero;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,7 +11,7 @@ public class BattleScene {
 
   //  This is where the battles are held between two armies that are given at input
 
-    public static void battleArmies(Army army1, Army army2) throws IOException {                    // Main method for battling armies
+    public static void battleArmies(Army army1, Army army2, Hero hero) throws IOException {                    // Main method for battling armies
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -23,7 +25,11 @@ public class BattleScene {
                 continue;
             }
 
-            int damage = army1.inflictDamage(choice[0]);
+            int damage = army1.inflictDamage(choice[0]);                                             // adds % to damage equal to Attack SKill
+
+            int damage2 = (int)(damage*hero.getAtack()/100.0);
+            damage += damage2;
+            System.out.println("Damage increased by " + damage2 + " from Hero Attack Skill");
 
 
             switch (choice[1]){
@@ -44,7 +50,7 @@ public class BattleScene {
                 break;
             }
             System.out.println("ENEMY ATTACKS!");
-            computerAttacks(army1, army2);
+            computerAttacks(army1, army2, hero);
 
 
         }
@@ -105,7 +111,7 @@ public class BattleScene {
 
     }
 
-    public static void computerAttacks(Army army1, Army army2){
+    public static void computerAttacks(Army army1, Army army2, Hero hero){
 
         boolean valid_attack = false;
         while(!valid_attack) {
@@ -122,6 +128,10 @@ public class BattleScene {
             valid_attack = true;
 
             int damage = army2.inflictDamage(choice[0]);
+
+            int damage2 = (int)(damage*hero.getDefence()/100.0);                                     // takes % of damage equal to Defense Skill
+            damage -= damage2;
+            System.out.println("Damage decreased by " + damage2 + " from Hero Defence Skill");
 
 
 

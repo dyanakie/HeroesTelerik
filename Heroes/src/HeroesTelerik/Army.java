@@ -22,7 +22,6 @@ public class Army {
         slotOne = new ArrayList<Creature>();
         slotTwo = new ArrayList<Creature>();
         slotThree = new ArrayList<Creature>();
-        slotOneType = "";
         this.defeated = false;
 
     }
@@ -121,7 +120,7 @@ public class Army {
     public void setSlotOne(int damage) {
 
         if(slotOne.get(0) instanceof Powerable){
-            damage = specialPowerChange(slotOne, damage);          // Checks if the creature has special powers and changes damage
+            damage = specialPowerChange(slotOne, damage, "defence");          // Checks if the creature has special powers and changes damage
         }
 
         int dead = damage/ slotOne.get(0).getHealth();
@@ -140,7 +139,7 @@ public class Army {
     public void setSlotTwo(int damage) {
 
         if(slotTwo.get(0) instanceof Powerable){
-            damage = specialPowerChange(slotTwo, damage);          // Checks if the creature has special powers and changes damage
+            damage = specialPowerChange(slotTwo, damage, "defence");          // Checks if the creature has special powers and changes damage
         }
         int dead = damage/ slotTwo.get(0).getHealth();
         int dead_new = 0;
@@ -158,7 +157,8 @@ public class Army {
     public void setSlotThree(int damage) {
 
         if(slotThree.get(0) instanceof Powerable){
-            damage = specialPowerChange(slotThree, damage);          // Checks if the creature has special powers and changes damage
+
+            damage = specialPowerChange(slotThree, damage, "defence");          // Checks if the creature has special powers and changes damage
         }
         int dead = damage/ slotThree.get(0).getHealth();
         int dead_new = 0;
@@ -197,7 +197,7 @@ public class Army {
 
             if(slotOne.get(0) instanceof Powerable){
 
-                damage = specialPowerChange(slotThree, damage);          // Checks if the creature has special powers and changes damage
+                damage = specialPowerChange(slotThree, damage, "attack");          // Checks if the creature has special powers and changes damage
             }
 
             System.out.println(damage + " damage!");
@@ -213,7 +213,7 @@ public class Army {
 
             if(slotTwo.get(0) instanceof Powerable){                                          // Checks if the creature has special powers and changes damage
 
-                damage = specialPowerChange(slotThree, damage);
+                damage = specialPowerChange(slotThree, damage, "attack");
             }
 
             System.out.println("damage: " + damage);
@@ -228,7 +228,7 @@ public class Army {
 
             if(slotThree.get(0) instanceof Powerable){                                    // Checks if the creature has special powers and changes damage
 
-                damage = specialPowerChange(slotThree, damage);
+                damage = specialPowerChange(slotThree, damage, "attack");
             }
 
             System.out.printf("%s inflicts ", getSlotThreeType());
@@ -258,14 +258,14 @@ public class Army {
     }
 
 
-    public int specialPowerChange(List<Creature> slot, int damage){                            // Changes the damage according to the power
+    public int specialPowerChange(List<Creature> slot, int damage, String stance){                            // Changes the damage according to the power
 
-        if(((Powerable) slot.get(0)).getPower().getName().equals("Double Damage")){
+        if(((Powerable) slot.get(0)).getPower().getName().equals("Double Damage") && stance.equals("attack")){
             damage *= 2;
             System.out.println("(DOUBLE DAMAGE!)");
             return damage;
         }
-        if(((Powerable) slot.get(0)).getPower().getName().equals("Half Damage")){
+        if(((Powerable) slot.get(0)).getPower().getName().equals("Half Damage") && stance.equals("defence")){
             damage /= 2;
             System.out.println("(HALF DAMAGE TAKEN)");
             return damage;

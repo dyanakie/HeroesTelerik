@@ -36,7 +36,7 @@ public class StartGame {
          Menu.newGameScreen();
          Menu.mainMenuInitial();
 
-         /*while(true) {
+         while(true) {
 
              map.printMap(Conan.getCoordinate().x, Conan.getCoordinate().y, heroArmy);
              System.out.println();
@@ -54,10 +54,10 @@ public class StartGame {
              }
              Conan.move(newDirection);
 
-         }*/
+         }
 
 
-         BattleScene.battleArmies(heroArmy, enemyArmy);
+       //  BattleScene.battleArmies(heroArmy, enemyArmy, Conan);
 
     }
 
