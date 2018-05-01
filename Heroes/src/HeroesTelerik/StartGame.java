@@ -16,18 +16,19 @@ public class StartGame {
 
         Hero Conan = new Hero("Conan");
 
+
         Army heroArmy = new Army();
         Conan.setArmy(heroArmy);
-        heroArmy.addSlot1(new Gremlin(), 40);
+        heroArmy.addSlot1(new Skeleton(), 47);
         heroArmy.addSlot2(new Pegasus(), 30);
-        heroArmy.addSlot3(new Hydra(), 7);
+        heroArmy.addSlot3(new Dragon(), 7);
 
       //  heroArmy.showWholeArmy();
          Army enemyArmy = new Army();
 
          enemyArmy.addSlot1(new Centaur(), 55);
          enemyArmy.addSlot2(new Vampire(), 7);
-         enemyArmy.addSlot3(new Dragon(), 5);
+         enemyArmy.addSlot3(new Nightmare(), 10);
 
          Map map = new Map();
 
@@ -35,7 +36,7 @@ public class StartGame {
          Menu.newGameScreen();
          Menu.mainMenuInitial();
 
-         while(true) {
+         /*while(true) {
 
              map.printMap(Conan.getCoordinate().x, Conan.getCoordinate().y, heroArmy);
              System.out.println();
@@ -53,10 +54,10 @@ public class StartGame {
              }
              Conan.move(newDirection);
 
-         }
+         }*/
 
 
-       //  BattleScene.battleArmies(heroArmy, enemyArmy);
+         BattleScene.battleArmies(heroArmy, enemyArmy);
 
     }
 

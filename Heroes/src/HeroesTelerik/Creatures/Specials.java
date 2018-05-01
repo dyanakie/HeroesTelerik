@@ -1,7 +1,6 @@
 package HeroesTelerik.Creatures;
 
-public interface Specials {
+public enum Specials {
 
-
-    public void hasSpecial(Creature_Specials special);
+    DOUBLE_DAMAGE, HALF_DAMAGE_TAKEN, MULTIHIT
 }
