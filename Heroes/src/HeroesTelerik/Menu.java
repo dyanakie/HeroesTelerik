@@ -75,7 +75,12 @@ public class Menu {
 
             System.out.println();
             System.out.print("Please enter your choice: ");
-            choice = br.readLine().charAt(0);
+            String S = br.readLine();
+
+            if(S.equals("") || !Character.isDigit(S.charAt(0))){
+                continue;
+            }
+            choice = S.charAt(0);
 
             switch (choice) {
                 case '1':
@@ -127,7 +132,12 @@ public class Menu {
 
             System.out.println();
             System.out.print("Please enter your choice: ");
-            choice = br.readLine().charAt(0);
+            String S = br.readLine();
+
+            if(S.equals("") || !Character.isDigit(S.charAt(0))){
+                continue;
+            }
+            choice = S.charAt(0);
 
             switch (choice) {
                 case '1':
