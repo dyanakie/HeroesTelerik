@@ -16,13 +16,13 @@ public class Generator {
 
             case 'V':
 
-                int number = random.nextInt(40) + 5;
+                int number = random.nextInt(60) + 15;
                 army.addSlot1(new Skeleton(), number);
 
                 number = random.nextInt(40) + 5;
                 army.addSlot2(new Gremlin(), number);
 
-                number = random.nextInt(40) + 5;
+                number = random.nextInt(35) + 5;
                 army.addSlot3(new Centaur(), number);
 
                 return army;
@@ -30,13 +30,13 @@ public class Generator {
 
             case 'A':
 
-                number = random.nextInt(20) + 5;
+                number = random.nextInt(35) + 5;
                 army.addSlot1(new Vampire(), number);
 
-                number = random.nextInt(20) + 5;
+                number = random.nextInt(35) + 5;
                 army.addSlot2(new Griffon(), number);
 
-                number = random.nextInt(20) + 5;
+                number = random.nextInt(35) + 5;
                 army.addSlot3(new Pegasus(), number);
 
                 return army;
@@ -46,10 +46,10 @@ public class Generator {
                 number = random.nextInt(40) + 15;
                 army.addSlot1(new Dragon(), number);
 
-                number = random.nextInt(30) + 15;
+                number = random.nextInt(40) + 15;
                 army.addSlot2(new Nightmare(), number);
 
-                number = random.nextInt(40) + 5;
+                number = random.nextInt(50) + 20;
                 army.addSlot3(new Hydra(), number);
 
                 return army;
@@ -68,14 +68,14 @@ public class Generator {
 
             case 'V':
 
-                loot = random.nextInt(2000) + 500;
+                loot = random.nextInt(1500) + 500;
 
                 return loot;
 
 
             case 'A':
 
-                loot = random.nextInt(10000) + 2000;
+                loot = random.nextInt(3000) + 2000;
 
                 return loot;
 
