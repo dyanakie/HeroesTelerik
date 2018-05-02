@@ -59,6 +59,7 @@ public class BattleScene {
             System.out.println("CONGRATULATIONS YOUR FORCES HAVE PREVAILED!");
         }else{
             System.out.println("YOUR FORCES HAVE BEEN CRUSHED!");
+            System.exit(0);
         }
 
 
