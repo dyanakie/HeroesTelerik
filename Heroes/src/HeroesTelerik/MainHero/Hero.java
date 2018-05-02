@@ -127,7 +127,7 @@ public class Hero {
                 coordinate.setY(coordinate.getY()+1);
             }
             if(A == 'a'){
-                if(!checkCoordinate(getCoordinate().getX()-1, getCoordinate().getY()-1)){
+                if(!checkCoordinate(getCoordinate().getX(), getCoordinate().getY()-1)){
                     System.out.println("Invalid move!");
                     return;
                 }

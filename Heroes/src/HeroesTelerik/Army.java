@@ -195,7 +195,7 @@ public class Army {
 
             if(slotOne.get(0) instanceof Powerable){
 
-                damage = specialPowerChange(slotThree, damage, "attack");          // Checks if the creature has special powers and changes damage
+                damage = specialPowerChange(slotOne, damage, "attack");          // Checks if the creature has special powers and changes damage
             }
 
             System.out.println(damage + " damage!");
