@@ -17,14 +17,13 @@ public class StartGame {
         Hero Conan = new Hero("Conan");
 
 
-        Army heroArmy = new Army();
+        Army heroArmy = Generator.Generate_Army('V');
         Conan.setArmy(heroArmy);
+        /*Conan.setArmy(heroArmy);
         heroArmy.addSlot1(new Skeleton(), 47);
         heroArmy.addSlot2(new Pegasus(), 30);
-        heroArmy.addSlot3(new Dragon(), 7);
+        heroArmy.addSlot3(new Dragon(), 7);*/
 
-      //  heroArmy.showWholeArmy();
-       //  Army enemyArmy = Generator.Generate_Army('V');
 
 
          Map map = new Map();
@@ -77,10 +76,12 @@ public class StartGame {
 
              if(Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] == 'C') {
                  Army enemyArmy = Generator.Generate_Army('C');
-                 System.out.println("\n\n\n\n You enter an Enemy Stronghold and you are ATTACKED!");
+                 finalBattle();
                  BattleScene.battleArmies(heroArmy, enemyArmy, Conan);
 
+
                  credits();
+                 Conan.setCoordinate(new Coordinate(1,1));
                  Menu.mainMenuInitial();
              }
 
@@ -90,7 +91,7 @@ public class StartGame {
     }
 
 
-    public void finalBattle() throws IOException{
+    public static void finalBattle() throws IOException{
 
         System.out.println("********************************************");
         System.out.println("********************************************");

@@ -28,12 +28,21 @@ public class ArmyDetails {
             switch (choice) {
 
                 case '1':
+                    if(hero.army.getSlot1numbers() <= 0){
+                        continue;
+                    }
                     hero.army.setSlotOne(2000000000);
                     continue;
                 case '2':
+                    if(hero.army.getSlot2numbers() <= 0){
+                        continue;
+                    }
                      hero.army.setSlotTwo(2000000000);
                      continue;
                 case '3':
+                    if(hero.army.getSlot3numbers() <= 0){
+                        continue;
+                    }
                      hero.army.setSlotThree(2000000000);
                      continue;
                 case '4':

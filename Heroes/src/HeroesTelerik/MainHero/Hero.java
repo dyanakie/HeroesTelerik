@@ -100,6 +100,7 @@ public class Hero {
         this.gold = gold;
     }
 
+
     public void move(char A) {
 
             Map.turns++;

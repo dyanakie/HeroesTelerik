@@ -1,8 +1,6 @@
 package HeroesTelerik;
 
-import HeroesTelerik.Creatures.Creature;
-import HeroesTelerik.Creatures.Hard;
-import HeroesTelerik.Creatures.Powerable;
+import HeroesTelerik.Creatures.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -213,7 +211,7 @@ public class Army {
 
             if(slotTwo.get(0) instanceof Powerable){                                          // Checks if the creature has special powers and changes damage
 
-                damage = specialPowerChange(slotThree, damage, "attack");
+                damage = specialPowerChange(slotTwo, damage, "attack");
             }
 
             System.out.println("damage: " + damage);
@@ -241,19 +239,61 @@ public class Army {
         return 0;
     }
 
-    public void addCreature(int number){
+
+    public void addCreature(int number, String name){                         // adds creature to the target slot and checks if its first changes the type as well
 
         switch (number){
 
             case 1:
+                if(slotOne.size() == 0){
+                    addSlot1(checkNameCreature(name), 1);
+                    return;
+                }
                 slotOne.add(slotOne.get(0).getType2());
                 return;
             case 2:
+                if(slotTwo.size() == 0){
+                    addSlot2(checkNameCreature(name), 1);
+                    return;
+                }
                 slotTwo.add(slotTwo.get(0).getType2());
+                return;
             case 3:
+                if(slotThree.size() == 0){
+                    addSlot3(checkNameCreature(name), 1);
+                    return;
+                }
                 slotThree.add(slotThree.get(0).getType2());
 
         }
+
+    }
+
+    public Creature checkNameCreature(String name){
+
+        switch (name){
+            case "Gremlin":
+                return new Gremlin();
+            case "Skeleton":
+                return new Skeleton();
+            case "Centaur":
+                return new Centaur();
+            case "Vampire":
+                return new Vampire();
+            case "Pegasus":
+                return new Pegasus();
+            case "Griffon":
+                return new Griffon();
+            case "Dragon":
+                return new Dragon();
+            case "Hydra":
+                return new Hydra();
+            case "Nightmare":
+                return new Nightmare();
+
+        }
+
+        return new Dragon();
 
     }
 

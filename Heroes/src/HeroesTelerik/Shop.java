@@ -77,7 +77,7 @@ public class Shop {
                         System.out.println("Not enough gold or Not enough space !");                          // and if there is adds one of that type
                         continue;                                                                             // !to add later special case when its empty
                     }else{
-                        hero.army.addCreature(checkCreature(hero, "Gremlin"));
+                        hero.army.addCreature(checkCreature(hero, "Gremlin"), "Gremlin");
                         hero.setGold(hero.getGold()-50);
 
                     }
@@ -88,7 +88,7 @@ public class Shop {
                         System.out.println("Not enough gold or Not enough space !");
                         continue;
                     }else{
-                        hero.army.addCreature(checkCreature(hero, "Skeleton"));
+                        hero.army.addCreature(checkCreature(hero, "Skeleton"), "Skeleton");
                         hero.setGold(hero.getGold()-50);
 
                     }
@@ -98,7 +98,7 @@ public class Shop {
                         System.out.println("Not enough gold or Not enough space !");
                         continue;
                     }else{
-                        hero.army.addCreature(checkCreature(hero, "Centaur"));
+                        hero.army.addCreature(checkCreature(hero, "Centaur"), "Centaur");
                         hero.setGold(hero.getGold()-50);
 
                     }
@@ -108,7 +108,7 @@ public class Shop {
                         System.out.println("Not enough gold or Not enough space !");
                         continue;
                     }else{
-                        hero.army.addCreature(checkCreature(hero, "Vampire"));
+                        hero.army.addCreature(checkCreature(hero, "Vampire"), "Vampire");
                         hero.setGold(hero.getGold()-200);
 
                     }
@@ -119,7 +119,7 @@ public class Shop {
                         System.out.println("Not enough gold or Not enough space !");
                         continue;
                     }else{
-                        hero.army.addCreature(checkCreature(hero, "Pegasus"));
+                        hero.army.addCreature(checkCreature(hero, "Pegasus"), "Pegasus");
                         hero.setGold(hero.getGold()-200);
 
                     }
@@ -129,18 +129,19 @@ public class Shop {
                         System.out.println("Not enough gold or Not enough space !");
                         continue;
                     }else{
-                        hero.army.addCreature(checkCreature(hero, "Griffon"));
+                        hero.army.addCreature(checkCreature(hero, "Griffon"), "Griffon");
                         hero.setGold(hero.getGold()-200);
 
                     }
                     continue;
 
                 case '7':
+
                     if(hero.getGold() < 300 || checkCreature(hero, "Dragon") == 0){
                         System.out.println("Not enough gold or Not enough space !");
                         continue;
                     }else{
-                        hero.army.addCreature(checkCreature(hero, "Dragon"));
+                        hero.army.addCreature(checkCreature(hero, "Dragon"), "Dragon");
                         hero.setGold(hero.getGold()-300);
 
                     }
@@ -151,7 +152,7 @@ public class Shop {
                         System.out.println("Not enough gold or Not enough space !");
                         continue;
                     }else{
-                        hero.army.addCreature(checkCreature(hero, "Nightmare"));
+                        hero.army.addCreature(checkCreature(hero, "Nightmare"), "Nightmare");
                         hero.setGold(hero.getGold()-300);
 
                     }
@@ -161,7 +162,7 @@ public class Shop {
                         System.out.println("Not enough gold or Not enough space !");
                         continue;
                     }else{
-                        hero.army.addCreature(checkCreature(hero, "Hydra"));
+                        hero.army.addCreature(checkCreature(hero, "Hydra"), "Hydra");
                         hero.setGold(hero.getGold()-300);
 
                     }
@@ -181,9 +182,22 @@ public class Shop {
 
     }
 
-    public static int checkCreature(Hero hero, String creature){
+    public static int checkCreature(Hero hero, String creature){             // Checks do you have empty slot or same creature in slot
 
-        switch (creature){
+
+        if(hero.army.checkSlotEmpty(1)){                               // checks if you have an empty slot so you can put your purchase there
+            return 1;
+        }
+
+        if(hero.army.checkSlotEmpty(2)){
+            return 2;
+        }
+
+        if(hero.army.checkSlotEmpty(3)){
+            return 3;
+        }
+
+        switch (creature){                                                         // checks if you have slot with the same creature
 
             case "Gremlin":
                 return hero.army.checkSlotType("Gremlin");
@@ -205,6 +219,8 @@ public class Shop {
                 return hero.army.checkSlotType("Nightmare");
 
         }
+
+
 
         return 0;
     }
