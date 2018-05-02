@@ -62,7 +62,7 @@ public class Shop {
             System.out.println(" 4. Vampire 200g         5. Pegasus 200g         6. Griffon 200g");
             System.out.println(" 7. Dragon 300g          8. Nightmare 300g       9. Hydra 300g");
             System.out.println();
-            System.out.println("E - Exit");
+            System.out.println("E - Exit  A - Army Overview");
             System.out.println("What would you like to buy: ");
             char choice = ' ';
 
@@ -166,6 +166,11 @@ public class Shop {
 
                     }
                     continue;
+
+                case 'A':
+                    ArmyDetails.showForces(hero);
+                    continue;
+
 
 
                 default:

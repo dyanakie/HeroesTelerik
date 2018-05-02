@@ -57,7 +57,7 @@ public class StartGame {
          }
 
 
-       //  BattleScene.battleArmies(heroArmy, enemyArmy, Conan);
+       //o s  BattleScene.battleArmies(heroArmy, enemyArmy, Conan);
 
     }
 
