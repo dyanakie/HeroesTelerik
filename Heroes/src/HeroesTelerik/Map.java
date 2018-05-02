@@ -54,6 +54,6 @@ public class Map {
         map[x][y] = ' ';
         System.out.println("********************************************");
         System.out.println("ARMY:  |" + army.getSlot1numbers() + army.getSlotOneType() + "|" + army.getSlot2numbers()+army.getSlotTwoType() + "|" + army.getSlot3numbers()+army.getSlotThreeType() + "|");
-        System.out.println("x: " + x + " y: " + y);
+        System.out.println("LEGEND  V - Village  A - Stronghold  C - Castle");
     }
 }

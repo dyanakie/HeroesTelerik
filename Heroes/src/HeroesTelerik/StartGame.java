@@ -34,6 +34,8 @@ public class StartGame {
 
          while(true) {
 
+             System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
+
              map.printMap(Conan.getCoordinate().x, Conan.getCoordinate().y, heroArmy);
              System.out.println();
              System.out.println("M - Menu  E - Exit");
