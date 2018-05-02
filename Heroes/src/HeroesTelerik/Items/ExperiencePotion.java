@@ -8,7 +8,6 @@ import HeroesTelerik.MainHero.Hero;
 public class ExperiencePotion extends Potion {
 
     public ExperiencePotion(String name, int price, double weight, int quantity){
-        super();
         this.setQuantity(quantity);
         this.setItemName(name);
         this.setPrice(price);

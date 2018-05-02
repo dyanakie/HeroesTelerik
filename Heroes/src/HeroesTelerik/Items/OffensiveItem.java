@@ -4,14 +4,19 @@ package HeroesTelerik.Items;
  * Created by Joro on 27/04/2018
  */
 public abstract class OffensiveItem extends Item implements Wearable{
-    int damage;
+    int attack;
+    boolean equipped;
 
-    public int getDamage() {
-        return damage;
+    public int getAttack() {
+        return attack;
     }
 
-    public void setDamage(int damage) {
-        this.damage = damage;
+    public void setAttack(int attack) {
+        this.attack = attack;
     }
 
+    @Override
+    public boolean isEquipped(){
+        return equipped;
+    }
 }

@@ -5,18 +5,16 @@ package HeroesTelerik.Items;
  */
 public class Sword extends MeleeWeapon{
 
-    public Sword(String name,int damage, int price, double weight)
-    {
-
+    public Sword(String name,int damage, int price, double weight) {
         this.setItemName(name);
-        this.setDamage(damage);
+        this.setAttack(damage);
         this.setPrice(price);
         this.setWeight(weight);
     }
 
     @Override
     public String toString() {
-        return String.format("Weapon: %s, Damage: %d, Price: %d",getClass().getSimpleName(),getDamage(),getPrice());
+        return String.format("Weapon: %s, Damage: %d, Price: %d",getClass().getSimpleName(), getAttack(),getPrice());
     }
 
 }

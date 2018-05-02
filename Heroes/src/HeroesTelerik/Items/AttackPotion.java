@@ -8,7 +8,6 @@ import HeroesTelerik.MainHero.Hero;
 public class AttackPotion extends Potion {
 
     public AttackPotion(String name, int price, double weight, int quantity){
-        super();
         this.setQuantity(quantity);
         this.setItemName(name);
         this.setPrice(price);

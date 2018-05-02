@@ -5,12 +5,7 @@ package HeroesTelerik.Items;
  */
 public interface Consumable {
 
+    boolean isConsumed();
+   //  public void destroy();   itself??
 }
 
-
-//implement comparable
-//equip item
-//consume item
-//toString
-//objects
-//exception class custom

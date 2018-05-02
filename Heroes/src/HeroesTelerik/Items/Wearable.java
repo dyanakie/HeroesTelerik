@@ -5,4 +5,5 @@ package HeroesTelerik.Items;
  */
 public interface Wearable {
 
+   boolean isEquipped();
 }

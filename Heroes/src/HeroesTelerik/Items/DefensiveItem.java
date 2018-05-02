@@ -5,6 +5,7 @@ package HeroesTelerik.Items;
  */
 public abstract class DefensiveItem extends Item implements Wearable{
     int defense;
+    boolean equipped;
 
     public int getDefense() {
         return defense;
@@ -12,6 +13,15 @@ public abstract class DefensiveItem extends Item implements Wearable{
 
     public void setDefense(int defense) {
         this.defense = defense;
+    }
+
+    public void setEquipped(boolean equipped){
+        this.equipped = equipped;
+    }
+
+    @Override
+    public boolean isEquipped(){
+        return equipped;
     }
 
 }

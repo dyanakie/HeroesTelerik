@@ -51,6 +51,7 @@ public abstract class Item {
         this.weight = weight;
     }
 
+    //Uses mouse position to generate random item id
     public final int generateId()
     {
         double x = MouseInfo.getPointerInfo().getLocation().getX();

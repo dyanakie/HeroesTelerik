@@ -7,6 +7,7 @@ import HeroesTelerik.MainHero.Hero;
  */
 public abstract class Potion extends Item implements Consumable{
     int quantity;
+    boolean consumed = false;
 
     public Potion(){
 
@@ -20,5 +21,14 @@ public abstract class Potion extends Item implements Consumable{
         this.quantity = quantity;
     }
 
+    public void setConsumed(boolean consumed){
+        this.consumed = consumed;
+    }
+
     public abstract void usePotion(Hero hero);
+
+    @Override
+    public boolean isConsumed(){
+        return consumed;
+    }
 }
