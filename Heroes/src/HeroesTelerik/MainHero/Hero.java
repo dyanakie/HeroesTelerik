@@ -51,6 +51,10 @@ public class Hero {
 
     }
 
+    public void addItems(Item A){
+        items.add(A);
+    }
+
     public void setArmy(Army army) {
         this.army = army;
     }
