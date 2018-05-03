@@ -16,7 +16,7 @@ public class ExperiencePotion extends Potion {
 
     @Override
     public void usePotion(Hero hero){
-        //hero.setExperience(hero.Experience()+ quantity);
+        hero.setExperience(hero.getExperience()+ quantity);
     }
     @Override
     public String toString() {

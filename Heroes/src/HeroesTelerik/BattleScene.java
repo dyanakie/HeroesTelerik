@@ -27,7 +27,7 @@ public class BattleScene {
 
             int damage = army1.inflictDamage(choice[0]);                                             // adds % to damage equal to Attack SKill
 
-            int damage2 = (int)(damage*hero.getAtack()/100.0);
+            int damage2 = (int)(damage*hero.getTotalAttack()/100.0);
             damage += damage2;
             System.out.println("Damage increased by " + damage2 + " from Hero Attack Skill");
 
@@ -161,7 +161,7 @@ public class BattleScene {
 
             int damage = army2.inflictDamage(choice[0]);
 
-            int damage2 = (int)(damage*hero.getDefence()/100.0);                                     // takes % of damage equal to Defense Skill
+            int damage2 = (int)(damage*hero.getTotalDefence()/100.0);                                     // takes % of damage equal to Defense Skill
             damage -= damage2;
             System.out.println("Damage decreased by " + damage2 + " from Hero Defence Skill");
 
