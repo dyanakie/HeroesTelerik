@@ -36,7 +36,7 @@ public class StartGame {
 
              System.out.println("\n\n");
 
-             map.printMap(Conan.getCoordinate().x, Conan.getCoordinate().y, heroArmy);
+             map.printMap(Conan.getCoordinate().x, Conan.getCoordinate().y, heroArmy, Conan);
              System.out.println();
              System.out.println("M - Menu  E - Exit");
              System.out.print("Please enter a direction to move(w,a,s,d): ");
@@ -59,6 +59,9 @@ public class StartGame {
                  int loot = Generator.generateLoot('V');
                  System.out.println("\n\n You gain: " + loot + " loot from the village ruins!");
                  Conan.setGold(Conan.getGold()+loot);
+                 int temp = Generator.generateExp('V');
+                 Conan.setExperience(Conan.getExperience()+temp);
+                 System.out.println("You have gained " + temp + " experience!");
 
                  Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] = ' ';
                  continue;
@@ -71,7 +74,9 @@ public class StartGame {
                  int loot = Generator.generateLoot('A');
                  System.out.println("\n\n You gain: " + loot + " loot from the cave ruins!");
                  Conan.setGold(Conan.getGold()+loot);
-                 Conan.setExperience(Conan.getExperience()+Generator.generateExp('A'));
+                 int temp = Generator.generateExp('A');
+                 Conan.setExperience(Conan.getExperience()+temp);
+                 System.out.println("You have gained " + temp + " experience!");
 
                  Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] = ' ';
                  continue;

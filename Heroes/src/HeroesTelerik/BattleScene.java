@@ -163,7 +163,7 @@ public class BattleScene {
 
             int damage2 = (int)(damage*hero.getTotalDefence()/100.0);                                     // takes % of damage equal to Defense Skill
             damage -= damage2;
-            System.out.println("Damage decreased by " + damage2 + " from Hero Defence Skill");
+            System.out.println("Damage decreased by " + damage2 + " from Hero Defense Skill");
 
 
 

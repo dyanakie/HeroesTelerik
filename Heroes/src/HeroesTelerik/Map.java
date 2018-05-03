@@ -1,5 +1,7 @@
 package HeroesTelerik;
 
+import HeroesTelerik.MainHero.Hero;
+
 import java.util.Random;
 
 public class Map {
@@ -31,14 +33,14 @@ public class Map {
     }
 
 
-    public void printMap(int x, int y, Army army){
+    public void printMap(int x, int y, Army army, Hero hero){
 
         map[x][y] = 'H';
 
         System.out.println("               HEROES OF TELERIK            ");
         System.out.println("********************************************");
-        System.out.println("Player: Conan      Level 1        Turns: " + turns);
-        System.out.println("********************************************");
+        System.out.printf("Player: Conan      Level %d        Turns: %d", hero.getLevel(), turns);
+        System.out.println("\n********************************************");
 
         for(int i = 0; i < map.length; i++){
             for(int r = 0; r < map[i].length; r++){
