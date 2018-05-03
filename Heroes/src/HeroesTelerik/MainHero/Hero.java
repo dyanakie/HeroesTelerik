@@ -6,6 +6,7 @@ import HeroesTelerik.Coordinate;
 import HeroesTelerik.Items.Item;
 import HeroesTelerik.Items.MeleeWeapon;
 import HeroesTelerik.Items.Shield;
+import HeroesTelerik.Items.Sword;
 import HeroesTelerik.Map;
 
 
@@ -19,6 +20,8 @@ public class Hero {
     private static final int INITIAL_X_COORDINATE = 1;
     private static final int INITIAL_Y_COORDINATE = 1;
     private static final int INITIAL_EXPERIENCE = 1000;
+    private static final Shield INITIAL_SHIELD = new Shield("Brown Shield",0,0,12.50);
+    private static final MeleeWeapon INITIAL_WEAPON = new Sword("Wooden Sword",0,0,8.75);
 
 
     private Coordinate coordinate;
@@ -40,6 +43,8 @@ public class Hero {
         this.heroClass = HeroClass.randomHeroClass();
         this.attack = BASE_ATTACK;
         this.defence = BASE_DEFENCE;
+        this.shield = INITIAL_SHIELD;
+        this.mainWeapon = INITIAL_WEAPON;
         this.items = new ArrayList<Item>();
         this.army = new Army();
         this.gold = INITIAL_GOLD;
