@@ -362,43 +362,64 @@ public class Shop {
     public static int checkCreature(Hero hero, String creature){             // Checks do you have empty slot or same creature in slot
 
 
-        if(hero.army.checkSlotEmpty(1)){                               // checks if you have an empty slot so you can put your purchase there
-            return 1;
-        }
-
-        if(hero.army.checkSlotEmpty(2)){
-            return 2;
-        }
-
-        if(hero.army.checkSlotEmpty(3)){
-            return 3;
-        }
+        int slot = 0;
 
         switch (creature){                                                         // checks if you have slot with the same creature
 
             case "Gremlin":
-                return hero.army.checkSlotType("Gremlin");
+                slot = hero.army.checkSlotType("Gremlin");
+                break;
             case "Skeleton":
-                return hero.army.checkSlotType("Skeleton");
+                slot = hero.army.checkSlotType("Skeleton");
+                break;
             case "Centaur":
-                return hero.army.checkSlotType("Centaur");
+                slot = hero.army.checkSlotType("Centaur");
+                break;
             case "Vampire":
-                return hero.army.checkSlotType("Vampire");
+                slot = hero.army.checkSlotType("Vampire");
+                break;
             case "Pegasus":
-                return hero.army.checkSlotType("Pegasus");
+                slot = hero.army.checkSlotType("Pegasus");
+                break;
             case "Griffon":
-                return hero.army.checkSlotType("Griffon");
+                slot = hero.army.checkSlotType("Griffon");
+                break;
             case "Dragon":
-                return hero.army.checkSlotType("Dragon");
+                slot = hero.army.checkSlotType("Dragon");
+                break;
             case "Hydra":
-                return hero.army.checkSlotType("Hydra");
+                slot = hero.army.checkSlotType("Hydra");
+                break;
             case "Nightmare":
-                return hero.army.checkSlotType("Nightmare");
+                slot = hero.army.checkSlotType("Nightmare");
+                break;
+
+        }
+
+        if(slot == 1 && hero.army.getSlot1numbers() >= 1){
+            return slot;
+        }else if(slot == 2 && hero.army.getSlot2numbers() >= 1){
+            return slot;
+        }else if(slot == 3 && hero.army.getSlot3numbers() >= 1){
+            return slot;
+        }else {
+
+            if (hero.army.checkSlotEmpty(1)) {                               // checks if you have an empty slot so you can put your purchase there
+                return 1;
+            }
+
+            if (hero.army.checkSlotEmpty(2)) {
+                return 2;
+            }
+
+            if (hero.army.checkSlotEmpty(3)) {
+                return 3;
+            }
 
         }
 
 
 
-        return 0;
+        return slot;
     }
 }
