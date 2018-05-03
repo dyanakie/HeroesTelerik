@@ -1,6 +1,8 @@
 package HeroesTelerik;
 
 import HeroesTelerik.Creatures.*;
+import HeroesTelerik.Items.Shield;
+import HeroesTelerik.Items.Sword;
 import HeroesTelerik.MainHero.Hero;
 
 import java.io.BufferedReader;
@@ -16,17 +18,12 @@ public class StartGame {
 
         Hero Conan = new Hero("Conan");
 
-
         Army heroArmy = Generator.Generate_Army('V');
         Conan.setArmy(heroArmy);
-        /*Conan.setArmy(heroArmy);
-        heroArmy.addSlot1(new Skeleton(), 47);
-        heroArmy.addSlot2(new Pegasus(), 30);
-        heroArmy.addSlot3(new Dragon(), 7);*/
 
-
-
-         Map map = new Map();
+        Map map = new Map();
+        Shop.shopItems.add(new Sword("Fire Brand", 20, 700, 2.5));
+        Shop.shopItems.add(new Shield("Shield of Thor", 20, 700, 5));
 
 
          Menu.newGameScreen();
@@ -38,16 +35,22 @@ public class StartGame {
 
              map.printMap(Conan.getCoordinate().x, Conan.getCoordinate().y, heroArmy, Conan);
              System.out.println();
-             System.out.println("M - Menu  E - Exit");
+             System.out.println("m - Menu  e - Exit");
              System.out.print("Please enter a direction to move(w,a,s,d): ");
-             char newDirection = br.readLine().charAt(0);
+
+             String S = br.readLine();                               // check if its empty string
+             if(S.equals("")){
+                 continue;
+             }
+
+             char newDirection = S.charAt(0);
 
 
-             if(newDirection == 'E'){
+             if(newDirection == 'e'){
                  break;
              }
 
-             if(newDirection == 'M'){
+             if(newDirection == 'm'){
                  Menu.mainMenuInGame(Conan);
              }
              Conan.move(newDirection);

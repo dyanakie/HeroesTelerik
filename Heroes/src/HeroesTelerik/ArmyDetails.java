@@ -22,9 +22,15 @@ public class ArmyDetails {
             System.out.printf(" 2.  %d %s        (press 2 to disband) \n", hero.army.getSlot2numbers(), hero.army.getSlotTwoType());
             System.out.printf(" 3.  %d %s        (press 3 to disband)\n\n", hero.army.getSlot3numbers(), hero.army.getSlotThreeType());
 
-            System.out.println("(Press 4 to exit)");
+            System.out.println("(Press e to exit)");
             System.out.print("Please enter your choice: ");
-            char choice = br.readLine().charAt(0);
+
+            String S = br.readLine();                                       // check if its empty string
+            if(S.equals("")){
+                continue;
+            }
+            char choice = S.charAt(0);
+
             switch (choice) {
 
                 case '1':
@@ -45,7 +51,7 @@ public class ArmyDetails {
                     }
                      hero.army.setSlotThree(2000000000);
                      continue;
-                case '4':
+                case 'e':
                      return;
 
             }

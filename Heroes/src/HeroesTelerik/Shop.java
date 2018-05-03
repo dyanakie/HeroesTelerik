@@ -1,12 +1,17 @@
 package HeroesTelerik;
 
+import HeroesTelerik.Items.Item;
 import HeroesTelerik.MainHero.Hero;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Shop {
+
+    public static List<Item> shopItems = new ArrayList<>();
 
 
     public static void menu(Hero hero) throws IOException {
@@ -23,14 +28,19 @@ public class Shop {
             System.out.println("      `'::::.                 Your Gold: " + hero.getGold());
             System.out.println("        _____A_                       ");
             System.out.println("       /      /\\                 1. Buy Forces    ");
-            System.out.println("    __/__/\\__/  \\___              2. Return");
-            System.out.println("---/__|\" '' \"| /___/\\----");
+            System.out.println("    __/__/\\__/  \\___              2. Buy Items");
+            System.out.println("---/__|\" '' \"| /___/\\----        3. Return");
             System.out.println("   |''|\"'||'\"| |' '||");
             System.out.println("   `\"\"`\"\"))\"\"`\"`\"\"\"\"`");
 
             System.out.println();
             System.out.print("Please enter your choice: ");
-            choice = br.readLine().charAt(0);
+
+            String S = br.readLine();                               // check if its empty string
+            if(S.equals("")){
+                continue;
+            }
+            choice = S.charAt(0);
 
             switch (choice) {
                 case '1':
@@ -38,6 +48,10 @@ public class Shop {
                     continue;
 
                 case '2':
+                    Shop.buyItems(hero);
+                    continue;
+
+                case '3':
                     return;
 
                 default:
@@ -62,14 +76,18 @@ public class Shop {
             System.out.println(" 4. Vampire 200g         5. Pegasus 200g         6. Griffon 200g");
             System.out.println(" 7. Dragon 300g          8. Nightmare 300g       9. Hydra 300g");
             System.out.println();
-            System.out.println("E - Exit  A - Army Overview");
+            System.out.println("e - Exit  a - Army Overview");
             System.out.println("What would you like to buy: ");
             char choice = ' ';
 
-            choice = br.readLine().charAt(0);
+            String S = br.readLine();                               // check if its empty string
+            if(S.equals("")){
+                continue;
+            }
+            choice = S.charAt(0);
 
             switch (choice) {
-                case 'E':
+                case 'e':
                     return;
 
                 case '1':
@@ -168,7 +186,166 @@ public class Shop {
                     }
                     continue;
 
-                case 'A':
+                case 'a':
+                    ArmyDetails.showForces(hero);
+                    continue;
+
+
+
+                default:
+                    System.out.println("Please enter valid choice!");
+
+            }
+        }
+
+    }
+
+    public static void buyItems(Hero hero) throws IOException{
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        while(true) {
+
+            System.out.println("********************************************");
+            System.out.println("********************************************");
+            System.out.println(" You have: " + hero.getGold() + " gold");
+            System.out.println();
+            int count = 0;
+            for (Item A:
+                 Shop.shopItems) {
+                System.out.println(count + ". " + A.toString());
+                count++;
+            }
+            System.out.println();
+            System.out.println("e - Exit  a - Army Overview");
+            System.out.println("What would you like to buy: ");
+            char choice = ' ';
+
+            String S = br.readLine();                               // check if its empty string
+            if(S.equals("") || S.length() > 1){
+                continue;
+            }
+            choice = S.charAt(0);
+
+            if(Character.isDigit(S.charAt(0))) {
+                if (shopItems.size() < Integer.parseInt(S)) {
+                    System.out.println("No such item!");
+                    continue;
+                }
+            }
+
+            switch (choice) {
+
+                case 'e':
+                    return;
+
+                case '1':
+                    if(hero.getGold() < shopItems.get(1).getPrice() ){                  // Checks if there is an empty slot or slot with such creature
+                        System.out.println("Not enough gold");                          // and if there is adds one of that type
+                        continue;                                                                             // !to add later special case when its empty
+                    }else{
+                        hero.addItems(shopItems.get(1));
+                        hero.setGold(hero.getGold()-shopItems.get(1).getPrice());
+                        shopItems.remove(1);
+                        continue;
+
+                    }
+
+                case '2':
+                    if(hero.getGold() < shopItems.get(2).getPrice() ){
+                        System.out.println("Not enough gold");
+                        continue;
+                    }else{
+                        hero.addItems(shopItems.get(2));
+                        hero.setGold(hero.getGold()-shopItems.get(2).getPrice());
+                        shopItems.remove(2);
+                        continue;
+
+                    }
+
+                case '3':
+                    if(hero.getGold() < shopItems.get(3).getPrice() ){
+                        System.out.println("Not enough gold");
+                        continue;
+                    }else{
+                        hero.addItems(shopItems.get(3));
+                        hero.setGold(hero.getGold()-shopItems.get(3).getPrice());
+                        shopItems.remove(3);
+                        continue;
+
+                    }
+                case '4':
+                    if(hero.getGold() < shopItems.get(4).getPrice() ){
+                        System.out.println("Not enough gold");
+                        continue;
+                    }else{
+                        hero.addItems(shopItems.get(4));
+                        hero.setGold(hero.getGold()-shopItems.get(4).getPrice());
+                        shopItems.remove(4);
+                        continue;
+
+                    }
+
+                case '5':
+                    if(hero.getGold() < shopItems.get(5).getPrice() ){
+                        System.out.println("Not enough gold");
+                        continue;
+                    }else{
+                        hero.addItems(shopItems.get(5));
+                        hero.setGold(hero.getGold()-shopItems.get(5).getPrice());
+                        shopItems.remove(5);
+                        continue;
+
+                    }
+                case '6':
+                    if(hero.getGold() < shopItems.get(6).getPrice() ){
+                        System.out.println("Not enough gold");
+                        continue;
+                    }else{
+                        hero.addItems(shopItems.get(6));
+                        hero.setGold(hero.getGold()-shopItems.get(6).getPrice());
+                        shopItems.remove(6);
+                        continue;
+
+                    }
+
+                case '7':
+
+                    if(hero.getGold() < shopItems.get(7).getPrice() ){
+                        System.out.println("Not enough gold");
+                        continue;
+                    }else{
+                        hero.addItems(shopItems.get(7));
+                        hero.setGold(hero.getGold()-shopItems.get(7).getPrice());
+                        shopItems.remove(7);
+                        continue;
+
+                    }
+
+                case '8':
+                    if(hero.getGold() < shopItems.get(8).getPrice() ){
+                        System.out.println("Not enough gold");
+                        continue;
+                    }else{
+                        hero.addItems(shopItems.get(8));
+                        hero.setGold(hero.getGold()-shopItems.get(8).getPrice());
+                        shopItems.remove(8);
+                        continue;
+
+                    }
+                case '9':
+                    if(hero.getGold() < shopItems.get(9).getPrice() ){
+                        System.out.println("Not enough gold");
+                        continue;
+                    }else{
+                        hero.addItems(shopItems.get(9));
+                        hero.setGold(hero.getGold()-shopItems.get(9).getPrice());
+                        shopItems.remove(9);
+                        continue;
+
+                    }
+
+                case 'a':
                     ArmyDetails.showForces(hero);
                     continue;
 
