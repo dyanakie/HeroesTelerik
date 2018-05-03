@@ -84,9 +84,9 @@ public class Hero {
 
     public int getTotalAttack() {
         if (mainWeapon.isEquipped() == true) {
-            return (attack + getLevel() + mainWeapon.getAttack());
+            return (attack  + mainWeapon.getAttack());
         }
-        return attack + getLevel();
+        return attack ;
     }
 
     public void setAttack(int attack) {
@@ -95,9 +95,9 @@ public class Hero {
 
     public int getTotalDefence() {
         if (shield.isEquipped() == true) {
-            return (defence + getLevel() + shield.getDefense());
+            return (defence + shield.getDefense());
         }
-        return defence + getLevel();
+        return defence ;
     }
 
     public int getDefence() {
