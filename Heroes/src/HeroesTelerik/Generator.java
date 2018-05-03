@@ -85,4 +85,30 @@ public class Generator {
 
     }
 
+    public static int generateExp(char A){
+
+        int exp = 0;
+        Random random = new Random();
+
+        switch (A) {
+
+            case 'V':
+
+                exp = random.nextInt(800) + 500;
+
+                return exp;
+
+
+            case 'A':
+
+                exp = random.nextInt(500) + 1000;
+
+                return exp;
+
+        }
+
+        return exp;
+
+    }
+
 }

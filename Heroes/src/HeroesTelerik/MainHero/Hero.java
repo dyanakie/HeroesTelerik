@@ -84,14 +84,15 @@ public class Hero {
     }
 
     public int getAttack() {
+        attack += 5*getLevel();
         return attack;
     }
 
     public int getTotalAttack() {
         if (mainWeapon.isEquipped() == true) {
-            return (attack  + mainWeapon.getAttack());
+            return (getAttack()  + mainWeapon.getAttack());
         }
-        return attack ;
+        return getAttack() ;
     }
 
     public void setAttack(int attack) {
@@ -100,12 +101,13 @@ public class Hero {
 
     public int getTotalDefence() {
         if (shield.isEquipped() == true) {
-            return (defence + shield.getDefense());
+            return (getDefence() + shield.getDefense());
         }
-        return defence ;
+        return getDefence() ;
     }
 
     public int getDefence() {
+        defence += defence*getLevel();
         return defence;
     }
 

@@ -71,6 +71,7 @@ public class StartGame {
                  int loot = Generator.generateLoot('A');
                  System.out.println("\n\n You gain: " + loot + " loot from the cave ruins!");
                  Conan.setGold(Conan.getGold()+loot);
+                 Conan.setExperience(Conan.getExperience()+Generator.generateExp('A'));
 
                  Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] = ' ';
                  continue;
