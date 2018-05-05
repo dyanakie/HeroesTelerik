@@ -105,7 +105,7 @@ public class StartGame {
     }
 
 
-    public static void finalBattle() throws IOException{
+    private static void finalBattle() throws IOException{
 
         System.out.println("********************************************");
         System.out.println("********************************************");
@@ -127,7 +127,7 @@ public class StartGame {
 
     }
 
-    public static void credits() throws IOException{
+    private static void credits() throws IOException{
 
         System.out.println("********************************************");
         System.out.println("********************************************");

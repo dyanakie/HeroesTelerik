@@ -17,7 +17,7 @@ public class Shop {
     public static void menu(Hero hero) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        char choice = ' ';
+        char choice;
 
         while(true) {
 
@@ -62,7 +62,7 @@ public class Shop {
 
     }
 
-    public static void hireForces(Hero hero) throws IOException{
+    private static void hireForces(Hero hero) throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -78,7 +78,7 @@ public class Shop {
             System.out.println();
             System.out.println("e - Exit  a - Army Overview");
             System.out.println("What would you like to buy: ");
-            char choice = ' ';
+            char choice;
 
             String S = br.readLine();                               // check if its empty string
             if(S.equals("")){
@@ -200,7 +200,7 @@ public class Shop {
 
     }
 
-    public static void buyItems(Hero hero) throws IOException{
+    private static void buyItems(Hero hero) throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -219,7 +219,7 @@ public class Shop {
             System.out.println();
             System.out.println("e - Exit  a - Army Overview");
             System.out.println("What would you like to buy: ");
-            char choice = ' ';
+            char choice;
 
             String S = br.readLine();                               // check if its empty string
             if(S.equals("") || S.length() > 1){
@@ -359,7 +359,7 @@ public class Shop {
 
     }
 
-    public static int checkCreature(Hero hero, String creature){             // Checks do you have empty slot or same creature in slot
+    private static int checkCreature(Hero hero, String creature){             // Checks do you have empty slot or same creature in slot
 
 
         int slot = 0;

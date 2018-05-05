@@ -47,7 +47,7 @@ public class Menu {
 
     }
 
-    public static int mainMenuInitial() throws IOException{
+    public static void mainMenuInitial() throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -84,7 +84,7 @@ public class Menu {
 
             switch (choice) {
                 case '1':
-                    return 1;
+                    return;
                 case '2':
                     System.out.println("Graphics: low medium high");
                     System.out.println("...");
@@ -100,11 +100,9 @@ public class Menu {
             }
         }
 
-        return 1;
-
     }
 
-    public static int mainMenuInGame(Hero hero) throws IOException{
+    public static void mainMenuInGame(Hero hero) throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -141,7 +139,7 @@ public class Menu {
 
             switch (choice) {
                 case '1':
-                    return 1;
+                    return;
 
                 case '2':
                     Statistics.heroStats(hero);
@@ -161,8 +159,6 @@ public class Menu {
 
             }
         }
-
-        return 1;
 
     }
 

@@ -66,7 +66,7 @@ public class BattleScene {
 
     }
 
-    public static int[] battleOverview(Army army1, Army army2)throws IOException{
+    private static int[] battleOverview(Army army1, Army army2)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println();
@@ -82,8 +82,8 @@ public class BattleScene {
         System.out.println();
         System.out.println("It is your turn..");
 
-        int temp = 0;
         int[] choice = new int[2];
+
         while(true) {
             System.out.println("Which of your forces would you like to use: ");
 
@@ -97,7 +97,6 @@ public class BattleScene {
             }
             else{
                 System.out.println("Wrong input!");
-                continue;
             }
 
         }
@@ -129,7 +128,7 @@ public class BattleScene {
 
     }
 
-    public static boolean checkValidAttack(int[] choice, Army army1, Army army2){
+    private static boolean checkValidAttack(int[] choice, Army army1, Army army2){
 
         if(army1.checkSlotEmpty(choice[0])){                         // if returns true then the slot is empty and is not valid attack
             return false;
@@ -143,7 +142,7 @@ public class BattleScene {
 
     }
 
-    public static void computerAttacks(Army army1, Army army2, Hero hero){
+    private static void computerAttacks(Army army1, Army army2, Hero hero){
 
         boolean valid_attack = false;
         while(!valid_attack) {

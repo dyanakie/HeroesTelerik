@@ -7,20 +7,18 @@ import java.util.List;
 
 public class Army {
 
-    List<Creature> slotOne;                               // The army has 3 slots which can be of different Type of Creatures
-    String slotOneType;
-    List<Creature> slotTwo;
-    String slotTwoType;
-    List<Creature> slotThree;
-    String slotThreeType;
-    boolean defeated;
+    private List<Creature> slotOne;                               // The army has 3 slots which can be of different Type of Creatures
+    private String slotOneType;
+    private List<Creature> slotTwo;
+    private String slotTwoType;
+    private List<Creature> slotThree;
+    private String slotThreeType;
 
     public Army(){
 
-        slotOne = new ArrayList<Creature>();
-        slotTwo = new ArrayList<Creature>();
-        slotThree = new ArrayList<Creature>();
-        this.defeated = false;
+        slotOne = new ArrayList<>();
+        slotTwo = new ArrayList<>();
+        slotThree = new ArrayList<>();
 
     }
 
@@ -269,7 +267,7 @@ public class Army {
 
     }
 
-    public Creature checkNameCreature(String name){
+    private Creature checkNameCreature(String name){
 
         switch (name){
             case "Gremlin":
@@ -298,7 +296,7 @@ public class Army {
     }
 
 
-    public int specialPowerChange(List<Creature> slot, int damage, String stance){                            // Changes the damage according to the power
+    private int specialPowerChange(List<Creature> slot, int damage, String stance){                            // Changes the damage according to the power
 
         if(((Powerable) slot.get(0)).getPower().getName().equals("Double Damage") && stance.equals("attack")){
             damage *= 2;
