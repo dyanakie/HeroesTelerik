@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 
 public class ArmyDetails {
 
-    public static void showForces(Hero hero) throws IOException{
+    public static void showForces(Hero hero) throws IOException{                                 // shows current forces and lets you disband some of them or go back
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -37,7 +37,7 @@ public class ArmyDetails {
                     if(hero.army.getSlot1numbers() <= 0){
                         continue;
                     }
-                    hero.army.setSlotOne(2000000000);
+                    hero.army.setSlotOne(2000000000);                                        //  in order to avoid additional method just deals maximum damage and kills off the slot
                     continue;
                 case '2':
                     if(hero.army.getSlot2numbers() <= 0){

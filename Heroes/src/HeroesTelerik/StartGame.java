@@ -1,6 +1,7 @@
 package HeroesTelerik;
 
 import HeroesTelerik.Creatures.*;
+import HeroesTelerik.Items.AttackPotion;
 import HeroesTelerik.Items.Shield;
 import HeroesTelerik.Items.Sword;
 import HeroesTelerik.MainHero.Hero;
@@ -24,7 +25,9 @@ public class StartGame {
         Map map = new Map();
         Shop.shopItems.add(new Sword("Fire Brand", 20, 700, 2.5));
         Shop.shopItems.add(new Shield("Shield of Thor", 20, 700, 5));
-
+        Shop.shopItems.add(new Sword("Sword of Song", 40, 3000, 10));
+        Shop.shopItems.add(new Shield("Shield of Thor", 40, 3000, 20));
+        Shop.shopItems.add(new AttackPotion("Attack Potion", 500, 10, 1));
 
          Menu.newGameScreen();
          Menu.mainMenuInitial();

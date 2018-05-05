@@ -14,7 +14,7 @@ public class Sword extends MeleeWeapon{
 
     @Override
     public String toString() {
-        return String.format("Weapon: %s, Damage: %d, Price: %d",getClass().getSimpleName(), getAttack(),getPrice());
+        return String.format("%s  Class: %s, Damage: %d, Price: %d",getItemName(), getClass().getSimpleName(), getAttack(),getPrice());
     }
 
 }

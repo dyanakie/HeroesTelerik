@@ -15,6 +15,6 @@ public class Shield extends DefensiveItem {
 
     @Override
     public String toString() {
-        return String.format("Weapon: %s, Damage: %d, Price: %d",getClass().getSimpleName(),getDefense(),getPrice());
+        return String.format("%s  Class: %s, Damage: %d, Price: %d",getItemName(), getClass().getSimpleName(), getDefense(),getPrice());
     }
 }

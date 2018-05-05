@@ -210,7 +210,7 @@ public class Shop {
             System.out.println("********************************************");
             System.out.println(" You have: " + hero.getGold() + " gold");
             System.out.println();
-            int count = 0;
+            int count = 1;
             for (Item A:
                  Shop.shopItems) {
                 System.out.println(count + ". " + A.toString());
@@ -240,9 +240,21 @@ public class Shop {
                     return;
 
                 case '1':
-                    if(hero.getGold() < shopItems.get(1).getPrice() ){                  // Checks if there is an empty slot or slot with such creature
+                    if(hero.getGold() < shopItems.get(0).getPrice() ){                  // Checks if there is an empty slot or slot with such creature
                         System.out.println("Not enough gold");                          // and if there is adds one of that type
                         continue;                                                                             // !to add later special case when its empty
+                    }else{
+                        hero.addItems(shopItems.get(0));
+                        hero.setGold(hero.getGold()-shopItems.get(0).getPrice());
+                        shopItems.remove(0);
+                        continue;
+
+                    }
+
+                case '2':
+                    if(hero.getGold() < shopItems.get(1).getPrice() ){
+                        System.out.println("Not enough gold");
+                        continue;
                     }else{
                         hero.addItems(shopItems.get(1));
                         hero.setGold(hero.getGold()-shopItems.get(1).getPrice());
@@ -251,7 +263,7 @@ public class Shop {
 
                     }
 
-                case '2':
+                case '3':
                     if(hero.getGold() < shopItems.get(2).getPrice() ){
                         System.out.println("Not enough gold");
                         continue;
@@ -262,8 +274,7 @@ public class Shop {
                         continue;
 
                     }
-
-                case '3':
+                case '4':
                     if(hero.getGold() < shopItems.get(3).getPrice() ){
                         System.out.println("Not enough gold");
                         continue;
@@ -274,7 +285,8 @@ public class Shop {
                         continue;
 
                     }
-                case '4':
+
+                case '5':
                     if(hero.getGold() < shopItems.get(4).getPrice() ){
                         System.out.println("Not enough gold");
                         continue;
@@ -285,8 +297,7 @@ public class Shop {
                         continue;
 
                     }
-
-                case '5':
+                case '6':
                     if(hero.getGold() < shopItems.get(5).getPrice() ){
                         System.out.println("Not enough gold");
                         continue;
@@ -297,7 +308,9 @@ public class Shop {
                         continue;
 
                     }
-                case '6':
+
+                case '7':
+
                     if(hero.getGold() < shopItems.get(6).getPrice() ){
                         System.out.println("Not enough gold");
                         continue;
@@ -309,8 +322,7 @@ public class Shop {
 
                     }
 
-                case '7':
-
+                case '8':
                     if(hero.getGold() < shopItems.get(7).getPrice() ){
                         System.out.println("Not enough gold");
                         continue;
@@ -321,8 +333,7 @@ public class Shop {
                         continue;
 
                     }
-
-                case '8':
+                case '9':
                     if(hero.getGold() < shopItems.get(8).getPrice() ){
                         System.out.println("Not enough gold");
                         continue;
@@ -330,17 +341,6 @@ public class Shop {
                         hero.addItems(shopItems.get(8));
                         hero.setGold(hero.getGold()-shopItems.get(8).getPrice());
                         shopItems.remove(8);
-                        continue;
-
-                    }
-                case '9':
-                    if(hero.getGold() < shopItems.get(9).getPrice() ){
-                        System.out.println("Not enough gold");
-                        continue;
-                    }else{
-                        hero.addItems(shopItems.get(9));
-                        hero.setGold(hero.getGold()-shopItems.get(9).getPrice());
-                        shopItems.remove(9);
                         continue;
 
                     }
