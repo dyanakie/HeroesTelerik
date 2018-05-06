@@ -32,7 +32,8 @@ public class Hero {
     private int defence;
     private Shield shield;
     private MeleeWeapon mainWeapon;
-    private List<Item> items;
+    public List<Item> items;
+    private List<Sword> swords;
     public Army army;
     private int gold;
 
@@ -47,6 +48,7 @@ public class Hero {
         this.mainWeapon = INITIAL_WEAPON;
         this.items = new ArrayList<Item>();
         this.army = new Army();
+        this.swords = new ArrayList<>();
         this.gold = INITIAL_GOLD;
 
     }
