@@ -18,6 +18,12 @@ public class Stronghold extends Structure {
     private ArrayList<Item> items;
     private int loot;
 
+    public Stronghold(){
+        this.army = Generator.Generate_Army('A');
+        this.loot = Generator.generateLoot('A');
+        this.items = (new RandomItemsFactory().generateItems());
+    }
+
     public Stronghold(Coordinate position, String name) {
         this.name = name;
         this.position = position;

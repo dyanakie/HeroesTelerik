@@ -5,7 +5,6 @@ package HeroesTelerik.Items;
  */
 public class Shield extends DefensiveItem {
 
-
     public Shield(String name, int defense, int price,double weight){
         this.setItemName(name);
         this.setDefense(defense);
@@ -15,6 +14,6 @@ public class Shield extends DefensiveItem {
 
     @Override
     public String toString() {
-        return String.format("%s  Class: %s, Damage: %d, Price: %d",getItemName(), getClass().getSimpleName(), getDefense(),getPrice());
+        return String.format("%s  Class: %s, Defense: %d, Price: %d",getItemName(), getClass().getSimpleName(), getDefense(),getPrice());
     }
 }

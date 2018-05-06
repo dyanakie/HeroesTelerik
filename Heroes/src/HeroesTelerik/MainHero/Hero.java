@@ -20,8 +20,8 @@ public class Hero {
     private static final int INITIAL_X_COORDINATE = 1;
     private static final int INITIAL_Y_COORDINATE = 1;
     private static final int INITIAL_EXPERIENCE = 1000;
-    private static final Shield INITIAL_SHIELD = new Shield("Brown Shield",0,0,12.50);
-    private static final MeleeWeapon INITIAL_WEAPON = new Sword("Wooden Sword",0,0,8.75);
+    private static final Shield INITIAL_SHIELD = new Shield("Brown Shield",1,0,12.50);
+    private static final MeleeWeapon INITIAL_WEAPON = new Sword("Wooden Sword",1,0,8.75);
 
 
     private Coordinate coordinate;
@@ -46,7 +46,7 @@ public class Hero {
         this.defence = BASE_DEFENCE;
         this.shield = INITIAL_SHIELD;
         this.mainWeapon = INITIAL_WEAPON;
-        this.items = new ArrayList<Item>();
+        this.items = new ArrayList<>();
         this.army = new Army();
         this.swords = new ArrayList<>();
         this.gold = INITIAL_GOLD;
@@ -183,7 +183,7 @@ public class Hero {
         }
     }
 
-    public void getLoot(Item loot) {
+    public void collectItem(Item loot) {
         items.add(loot);
     }
 

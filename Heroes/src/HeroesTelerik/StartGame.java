@@ -1,15 +1,11 @@
 package HeroesTelerik;
 
-import HeroesTelerik.Creatures.*;
-import HeroesTelerik.Items.AttackPotion;
-import HeroesTelerik.Items.Shield;
-import HeroesTelerik.Items.Sword;
+import HeroesTelerik.Items.RandomItemsFactory;
 import HeroesTelerik.MainHero.Hero;
-
+import HeroesTelerik.Structures.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 
 public class StartGame {
 
@@ -18,22 +14,30 @@ public class StartGame {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         Hero Conan = new Hero("Conan");
-
+        RandomItemsFactory randomItemsFactory = new RandomItemsFactory();
         Army heroArmy = Generator.Generate_Army('V');
         Conan.setArmy(heroArmy);
 
         Map map = new Map();
+        /*
         Shop.shopItems.add(new Sword("Fire Brand", 20, 700, 2.5));
         Shop.shopItems.add(new Shield("Shield of Thor", 20, 700, 5));
         Shop.shopItems.add(new Sword("Sword of Song", 40, 3000, 10));
         Shop.shopItems.add(new Shield("Shield of Thor", 40, 3000, 20));
         Shop.shopItems.add(new AttackPotion("Attack Potion", 500, 10, 1));
+        */
+        Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SWORD));
+        Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SWORD));
+        Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SWORD));
+        Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
+        Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
+        Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
+        Shop.shopItems.add(randomItemsFactory.getItem(ItemType.ATTACK_POTION));
 
          Menu.newGameScreen();
          Menu.mainMenuInitial();
 
          while(true) {
-
              System.out.println("\n\n");
 
              map.printMap(Conan.getCoordinate().x, Conan.getCoordinate().y, heroArmy, Conan);
@@ -48,7 +52,6 @@ public class StartGame {
 
              char newDirection = S.charAt(0);
 
-
              if(newDirection == 'e'){
                  break;
              }
@@ -59,14 +62,16 @@ public class StartGame {
              Conan.move(newDirection);
 
              if(Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] == 'V'){
-                 Army enemyArmy = Generator.Generate_Army('V');
+                 Village village = new Village();
+                 Army enemyArmy = village.getArmy();
                  System.out.println("\n\n\n\n You enter an Enemy Village and you are ATTACKED!");
                  BattleScene.battleArmies(heroArmy, enemyArmy, Conan);
-                 int loot = Generator.generateLoot('V');
+                 int loot = village.getLoot();
                  System.out.println("\n\n You gain: " + loot + " loot from the village ruins!");
                  Conan.setGold(Conan.getGold()+loot);
                  int temp = Generator.generateExp('V');
                  Conan.setExperience(Conan.getExperience()+temp);
+                 Conan.collectItem(randomItemsFactory.getItem(ItemType.SHIELD));
                  System.out.println("You have gained " + temp + " experience!");
 
                  Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] = ' ';
@@ -74,14 +79,17 @@ public class StartGame {
              }
 
              if(Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] == 'A'){
-                 Army enemyArmy = Generator.Generate_Army('A');
+                 Stronghold strongHold = new Stronghold();
+
+                 Army enemyArmy = strongHold.getArmy();
                  System.out.println("\n\n\n\n You enter an Enemy Stronghold and you are ATTACKED!");
                  BattleScene.battleArmies(heroArmy, enemyArmy, Conan);
-                 int loot = Generator.generateLoot('A');
+                 int loot = strongHold.getLoot();
                  System.out.println("\n\n You gain: " + loot + " loot from the cave ruins!");
                  Conan.setGold(Conan.getGold()+loot);
                  int temp = Generator.generateExp('A');
                  Conan.setExperience(Conan.getExperience()+temp);
+                 Conan.collectItem(randomItemsFactory.getItem(ItemType.SWORD));
                  System.out.println("You have gained " + temp + " experience!");
 
                  Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] = ' ';
@@ -89,10 +97,10 @@ public class StartGame {
              }
 
              if(Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] == 'C') {
-                 Army enemyArmy = Generator.Generate_Army('C');
+                 Castle castle = new Castle();
+                 Army enemyArmy = castle.getArmy();
                  finalBattle();
                  BattleScene.battleArmies(heroArmy, enemyArmy, Conan);
-
 
                  credits();
                  Conan.setCoordinate(new Coordinate(1,1));
@@ -100,10 +108,7 @@ public class StartGame {
              }
 
          }
-
-
     }
-
 
     private static void finalBattle() throws IOException{
 

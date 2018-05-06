@@ -1,7 +1,6 @@
 package HeroesTelerik.Items;
 
 import HeroesTelerik.ItemType;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -17,23 +16,23 @@ public class RandomItemsFactory {
     private final int MAX_VALUE = 30;
     private final int POTION_QUANTITY = 30;
     private String[] swordNames = {"Machete's Blade", "Death Bane","Crystal Abyss","Stick of Truth","HellRaiser","Wooden Sword"};
-    private String[] shieldNames = {"Sentinel","Skull Basher","Bone Shield","Death's Shield","BladeGuard","Brown Shield"};
+    private String[] shieldNames = {"Sentinel","Skull Basher","Luck of the Irish","Death's Shield","BladeGuard","Brown Shield"};
     private Random   random;
-    private int      value;
+    private int      value;     //base value for calculating item's stats
 
     public Item getItem(ItemType type){
         switch (type){
             case SHIELD: value = getValue(MAX_VALUE);
-                         return new Shield(shieldNames[getIndex()], value, value*2,value/2);
+                         return new Shield(shieldNames[getIndex()], value, value*80,value/2);
 
             case SWORD: value = getValue(MAX_VALUE);
-                        return new Sword(swordNames[getIndex()], value, value*3,value/3);
+                        return new Sword(swordNames[getIndex()], value, value*100,value/3);
 
             case ATTACK_POTION: value = getValue(POTION_QUANTITY);
-                        return new AttackPotion(getClass().toString(),value*2,1,value);
+                        return new AttackPotion("Attack potion",value*30,1,value);
 
             case EXP_POTION: value = getValue(POTION_QUANTITY);
-                        return new ExperiencePotion(getClass().toString(),value*2,1,value);
+                        return new ExperiencePotion("Experience Potion",value*20,1,value);
 
             default:return null;
         }

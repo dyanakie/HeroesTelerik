@@ -18,6 +18,12 @@ public class Village extends Structure{
     private ArrayList<Item> items;
     private int loot;
 
+    public Village(){
+        this.army = Generator.Generate_Army('V');
+        this.loot = Generator.generateLoot('V');
+        this.items = (new RandomItemsFactory().generateItems());
+    }
+
     public Village(Coordinate position,String name){
         this.position = position;
         this.name = name;
