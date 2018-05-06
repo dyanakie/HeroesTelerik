@@ -10,7 +10,6 @@ public abstract class Potion extends Item implements Consumable{
     boolean consumed = false;
 
     public Potion(){
-
     }
 
     public int getQuantity() {
