@@ -6,7 +6,9 @@ import HeroesTelerik.MainHero.Hero;
  * Created by Joro on 27/04/2018
  */
 public class AttackPotion extends Potion {
-
+    public AttackPotion(String name){
+        this.setItemName(name);
+    }
     public AttackPotion(String name, int price, double weight, int quantity){
         this.setQuantity(quantity);
         this.setItemName(name);
@@ -16,7 +18,7 @@ public class AttackPotion extends Potion {
 
     @Override
     public void usePotion(Hero hero){
-        hero.setAttack(hero.getAttack()+ quantity);
+        hero.setAttack(hero.getAttack() + quantity);
     }
 
     @Override

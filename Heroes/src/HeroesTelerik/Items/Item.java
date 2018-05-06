@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.Random;
 
 public abstract class Item {
-    private final int nameLength = 20;
+    private final int nameLength = 30;
     private String itemName;
     private int price;
     private int itemId;
