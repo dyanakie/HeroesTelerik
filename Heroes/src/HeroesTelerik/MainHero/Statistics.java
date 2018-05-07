@@ -82,7 +82,7 @@ public class Statistics {
                     hero.items) {
 
 
-                System.out.println(count + ". " + a.getItemName() + " ");
+                System.out.println(count + ". " + a.getItemName() + " " + showProperty(a));
                 count++;
             }
 
@@ -189,6 +189,34 @@ public class Statistics {
             return;
         }
 
+
+    }
+
+    public static int showProperty(Item item){
+
+        if(item.getClass().getSimpleName().equals("Shield")){
+            Shield temp = (Shield) item;
+            return temp.getDefense();
+        }
+
+        if(item.getClass().getSimpleName().equals("Sword")){
+            Sword temp = (Sword) item;
+            return temp.getAttack();
+        }
+
+        if(item.getClass().getSimpleName().equals("AttackPotion")){
+
+            AttackPotion temp = (AttackPotion) item;System.out.print(temp.getQuantity());
+            return temp.getQuantity();
+        }
+
+        if(item.getClass().getSimpleName().equals("ExperiencePotion")){
+
+            AttackPotion temp = (AttackPotion) item;
+            return temp.getQuantity();
+        }
+
+        return 0;
 
     }
 

@@ -29,13 +29,13 @@ public class ArmyGenerator {
 
             case 'A':
 
-                number = random.nextInt(35) + 5;
+                number = random.nextInt(45) + 15;
                 army.addSlot1(new Vampire(), number);
 
-                number = random.nextInt(35) + 5;
+                number = random.nextInt(45) + 15;
                 army.addSlot2(new Griffon(), number);
 
-                number = random.nextInt(35) + 5;
+                number = random.nextInt(45) + 15;
                 army.addSlot3(new Pegasus(), number);
 
                 return army;
