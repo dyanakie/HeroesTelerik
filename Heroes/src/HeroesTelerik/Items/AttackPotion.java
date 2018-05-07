@@ -18,7 +18,7 @@ public class AttackPotion extends Potion {
 
     @Override
     public void usePotion(Hero hero){
-        hero.setAttack(hero.getAttack() + quantity);
+        hero.setAttack(hero.getAttack() + quantity -5*(hero.getLevel()));
     }
 
     @Override

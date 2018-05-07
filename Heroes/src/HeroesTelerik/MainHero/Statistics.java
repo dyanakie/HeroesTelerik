@@ -1,9 +1,6 @@
 package HeroesTelerik.MainHero;
 
-import HeroesTelerik.Items.Item;
-import HeroesTelerik.Items.MeleeWeapon;
-import HeroesTelerik.Items.Shield;
-import HeroesTelerik.Items.Sword;
+import HeroesTelerik.Items.*;
 import HeroesTelerik.Menu;
 
 import java.io.BufferedReader;
@@ -23,7 +20,7 @@ public class Statistics {
             System.out.println();
 
             System.out.println("      _,.                             NAME: " + hero.getName());
-            System.out.println("    ,` -.)");
+            System.out.println("    ,` -.)                            LEVEL: " + hero.getLevel());
             System.out.println("   ( _/-\\\\-._");
             System.out.println("  /,|`--._,-^|            ,           CLASS:    " + hero.getHeroClass());
             System.out.println("  \\_| |`-._/||          ,'|           ATTACK:    " + hero.getTotalAttack());
@@ -84,7 +81,8 @@ public class Statistics {
             for (Item a :
                     hero.items) {
 
-                System.out.println(count + ". " + a.getItemName() + " ");
+
+                System.out.println(count + ". " + a.getItemName() + " " + showProperty(a));
                 count++;
             }
 
@@ -177,6 +175,48 @@ public class Statistics {
             return;
         }
 
+        if(item.getClass().getSimpleName().equals("AttackPotion")){
+
+            AttackPotion temp = (AttackPotion) item;
+            temp.usePotion(hero);
+            return;
+        }
+
+        if(item.getClass().getSimpleName().equals("ExperiencePotion")){
+
+            ExperiencePotion temp = (ExperiencePotion) item;
+            temp.usePotion(hero);
+            return;
+        }
+
+
+    }
+
+    public static int showProperty(Item item){
+
+        if(item.getClass().getSimpleName().equals("Shield")){
+            Shield temp = (Shield) item;
+            return temp.getDefense();
+        }
+
+        if(item.getClass().getSimpleName().equals("Sword")){
+            Sword temp = (Sword) item;
+            return temp.getAttack();
+        }
+
+        if(item.getClass().getSimpleName().equals("AttackPotion")){
+
+            AttackPotion temp = (AttackPotion) item;System.out.print(temp.getQuantity());
+            return temp.getQuantity();
+        }
+
+        if(item.getClass().getSimpleName().equals("ExperiencePotion")){
+
+            AttackPotion temp = (AttackPotion) item;
+            return temp.getQuantity();
+        }
+
+        return 0;
 
     }
 

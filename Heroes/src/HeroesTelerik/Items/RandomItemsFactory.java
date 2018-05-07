@@ -14,7 +14,7 @@ import java.util.Random;
 public class RandomItemsFactory {
     private final int MIN_VALUE = 1;
     private final int MAX_VALUE = 30;
-    private final int POTION_QUANTITY = 30;
+    private final int POTION_QUANTITY = 20;
     private String[] swordNames = {"Machete's Blade", "Death Bane","Crystal Abyss","Stick of Truth","HellRaiser","Wooden Sword"};
     private String[] shieldNames = {"Sentinel","Skull Basher","Luck of the Irish","Death's Shield","BladeGuard","Brown Shield"};
     private Random   random;
@@ -42,7 +42,7 @@ public class RandomItemsFactory {
                         return new Sword(swordNames[getIndex()], value, value*100,value/3);
 
             case ATTACK_POTION: value = getValue(POTION_QUANTITY);
-                        return new AttackPotion("Attack potion",value*30,1,value);
+                        return new AttackPotion("Attack Potion",value*30,1,value);
 
             case EXP_POTION: value = getValue(POTION_QUANTITY);
                         return new ExperiencePotion("Experience Potion",value*20,1,value);
