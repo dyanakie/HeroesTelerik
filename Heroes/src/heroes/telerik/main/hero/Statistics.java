@@ -81,7 +81,7 @@ public class Statistics {
                     hero.items) {
 
 
-                System.out.println(count + ". " + a.getItemName() + " " + showProperty(a));
+                System.out.println(count + ". " + a.getItemName() + "    class: " + a.getClass().getSimpleName() + "     strenght: " + showProperty(a));
                 count++;
             }
 
@@ -208,7 +208,7 @@ public class Statistics {
 
         if(item.getClass().getSimpleName().equals("ExperiencePotion")){
 
-            AttackPotion temp = (AttackPotion) item;
+            ExperiencePotion temp = (ExperiencePotion) item;
             return temp.getQuantity();
         }
 

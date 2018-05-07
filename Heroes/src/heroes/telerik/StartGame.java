@@ -1,5 +1,9 @@
 package heroes.telerik;
 
+import heroes.telerik.creatures.Gremlin;
+import heroes.telerik.creatures.Griffon;
+import heroes.telerik.creatures.Nightmare;
+import heroes.telerik.items.ExperiencePotion;
 import heroes.telerik.items.Item;
 import heroes.telerik.items.RandomItemsFactory;
 import heroes.telerik.items.Sword;
@@ -21,7 +25,8 @@ public class StartGame {
         Hero Conan = new Hero("Conan");
         RandomItemsFactory randomItemsFactory = new RandomItemsFactory();
         Army heroArmy = ArmyGenerator.generateArmy('V');
-        Conan.setArmy(heroArmy);
+
+        Conan.army = heroArmy;
 
         Map map = new Map();
         /*
@@ -39,7 +44,7 @@ public class StartGame {
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
         Shop.shopItems.add(new Sword("Sword of Song", 40, 3000, 10));
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.ATTACK_POTION));
-        Shop.shopItems.add(randomItemsFactory.getItem(ItemType.EXP_POTION));
+        Shop.shopItems.add(new ExperiencePotion("potion", 500, 1, 2000));
 
 
          Menu.newGameScreen();
@@ -146,8 +151,21 @@ public class StartGame {
 
     private static void credits() throws IOException{
 
+        System.out.println("\n\n\n\n");
+
         System.out.println("********************************************");
         System.out.println("********************************************");
+        System.out.println("         *_   _   _   _   _   _ *");
+        System.out.println(" ^       | `_' `-' `_' `-' `_' `|       ^");
+        System.out.println(" |       |     YOU    WIN       |       |");
+        System.out.println(" |  (*)  |_   _   _   _   _   _ |  \\^/  |");
+        System.out.println(" | _<\">_ | `_' `-' `_' `-' `_' `| _(#)_ |");
+        System.out.println("o+o \\ / \\0                      0/ \\ / (=)");
+        System.out.println(" 0'\\ ^ /\\/                      \\/\\ ^ /`0");
+        System.out.println("   /_^_\\ |                      | /_^_\\");
+        System.out.println("   || || |                      | || ||");
+        System.out.println("   d|_|b_T______________________T_d|_|b");
+
         System.out.println("             CONGRATULATIONS \n");
         System.out.println("You have defeated the evil queen and restored Doncho's laptop!");
         System.out.println("You are hero of the land of Telerik !");
