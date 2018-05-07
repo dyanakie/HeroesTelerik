@@ -169,11 +169,6 @@ public class Army {
         System.out.println(dead_new + " " + monster + " dead!");
     }
 
-    public void showWholeArmy(){                                                                // Prints the current army for developing reasons :)
-        System.out.println("You have " + getSlot1numbers() + " of " + getSlotOneType());
-        System.out.println("You have " + getSlot2numbers() + " of " + getSlotTwoType());
-        System.out.println("You have " + getSlot3numbers() + " of " + getSlotThreeType());
-    }
 
     public boolean checkDefeated(){                                                           // Check if the army is defeated
         if(getSlot1numbers() <= 0 && getSlot2numbers() <=0 && getSlot3numbers() <= 0) {

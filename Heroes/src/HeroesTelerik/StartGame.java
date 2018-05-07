@@ -1,6 +1,8 @@
 package HeroesTelerik;
 
 import HeroesTelerik.Items.RandomItemsFactory;
+import HeroesTelerik.Items.Shield;
+import HeroesTelerik.Items.Sword;
 import HeroesTelerik.MainHero.Hero;
 import HeroesTelerik.Structures.*;
 import java.io.BufferedReader;
@@ -33,6 +35,7 @@ public class StartGame {
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.ATTACK_POTION));
+        Shop.shopItems.add(new Sword("Sword of Song", 40, 3000, 10));
 
          Menu.newGameScreen();
          Menu.mainMenuInitial();
@@ -71,7 +74,9 @@ public class StartGame {
                  Conan.setGold(Conan.getGold()+loot);
                  int temp = Generator.generateExp('V');
                  Conan.setExperience(Conan.getExperience()+temp);
-                 Conan.collectItem(randomItemsFactory.getItem(ItemType.SHIELD));
+                 Shield shield1 = (randomItemsFactory.getShield());
+                 System.out.println("You have found a beautiful shield called " + shield1.getItemName());
+                 Conan.addShield(shield1);
                  System.out.println("You have gained " + temp + " experience!");
 
                  Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] = ' ';
@@ -89,7 +94,9 @@ public class StartGame {
                  Conan.setGold(Conan.getGold()+loot);
                  int temp = Generator.generateExp('A');
                  Conan.setExperience(Conan.getExperience()+temp);
-                 Conan.collectItem(randomItemsFactory.getItem(ItemType.SWORD));
+                 Sword sword1 = (randomItemsFactory.getSword());
+                 System.out.println("You have found a beautiful sword called " + sword1.getItemName());
+                 Conan.addSword(sword1);
                  System.out.println("You have gained " + temp + " experience!");
 
                  Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] = ' ';

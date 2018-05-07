@@ -20,6 +20,19 @@ public class RandomItemsFactory {
     private Random   random;
     private int      value;     //base value for calculating item's stats
 
+    public Sword getSword(){
+        value = getValue(MAX_VALUE);
+        return new Sword(swordNames[getIndex()], value, value*100,value/3);
+
+    }
+
+    public Shield getShield(){
+
+        value = getValue(MAX_VALUE);
+        return new Shield(shieldNames[getIndex()], value, value*80,value/2);
+
+    }
+
     public Item getItem(ItemType type){
         switch (type){
             case SHIELD: value = getValue(MAX_VALUE);

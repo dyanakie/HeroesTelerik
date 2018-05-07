@@ -33,7 +33,8 @@ public class Hero {
     private Shield shield;
     private MeleeWeapon mainWeapon;
     public List<Item> items;
-    private List<Sword> swords;
+    public List<Shield> shields;
+    public List<Sword> swords;
     public Army army;
     private int gold;
 
@@ -48,13 +49,22 @@ public class Hero {
         this.mainWeapon = INITIAL_WEAPON;
         this.items = new ArrayList<>();
         this.army = new Army();
-        this.swords = new ArrayList<>();
         this.gold = INITIAL_GOLD;
+        this.shields = new ArrayList<>();
+        this.swords = new ArrayList<>();
 
     }
 
-    public void addItems(Item A){
-        items.add(A);
+    public void addItems(Item item){
+        items.add(item);
+    }
+
+    public void addShield(Shield shield){
+        shields.add(shield);
+    }
+
+    public void addSword(Sword sword){
+        swords.add(sword);
     }
 
     public void setArmy(Army army) {
@@ -94,10 +104,9 @@ public class Hero {
     }
 
     public int getTotalAttack() {
-        if (mainWeapon.isEquipped()) {
+
             return (getAttack()  + mainWeapon.getAttack());
-        }
-        return getAttack() ;
+
     }
 
     public void setAttack(int attack) {
@@ -105,10 +114,9 @@ public class Hero {
     }
 
     public int getTotalDefence() {
-        if (shield.isEquipped()) {
+
             return (getDefence() + shield.getDefense());
-        }
-        return getDefence() ;
+
     }
 
     public int getDefence() {
@@ -181,10 +189,6 @@ public class Hero {
             coordinate.setY(coordinate.getY() - 1);
 
         }
-    }
-
-    public void collectItem(Item loot) {
-        items.add(loot);
     }
 
     @Override
