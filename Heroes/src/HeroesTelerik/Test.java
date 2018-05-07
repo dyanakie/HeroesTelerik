@@ -20,7 +20,7 @@ public class Test {
         System.out.println(itemsFactory.getItem(ItemType.ATTACK_POTION));
         System.out.println(itemsFactory.getItem(ItemType.SHIELD));
         Army army = new Army();
-        Army armyGen = Generator.Generate_Army('A');
+        Army armyGen = ArmyGenerator.generateArmy('A');
         try {
 
             Village selo = new Village(new Coordinate(5, 5), "selo", armyGen);

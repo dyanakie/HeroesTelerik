@@ -25,11 +25,11 @@ public class ArmyDetails {
             System.out.println("(Press e to exit)");
             System.out.print("Please enter your choice: ");
 
-            String S = br.readLine();                                       // check if its empty string
-            if(S.equals("")){
+            String input = br.readLine();                                       // check if its empty string
+            if(input.equals("")){
                 continue;
             }
-            char choice = S.charAt(0);
+            char choice = input.charAt(0);
 
             switch (choice) {
 

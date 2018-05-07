@@ -87,11 +87,11 @@ public class BattleScene {
         while(true) {
             System.out.println("Which of your forces would you like to use: ");
 
-            String S = br.readLine();
-            if(S == null || S.equals("") || S.equals(" ")){
+            String input = br.readLine();
+            if(input == null || input.equals("") || input.equals(" ")){
                 continue;
             }
-            choice[0] = Integer.parseInt(S);
+            choice[0] = Integer.parseInt(input);
             if(choice[0] == 1 || choice[0] == 2 || choice[0] ==3){
                 break;
             }
@@ -104,11 +104,11 @@ public class BattleScene {
         while(true) {
             System.out.println("And which enemy force would you like to attack: ");
 
-            String S = br.readLine();
-            if(S == null || S.equals("") || S.equals(" ")){
+            String input = br.readLine();
+            if(input == null || input.equals("") || input.equals(" ")){
                 continue;
             }
-            choice[1] = Integer.parseInt(S);
+            choice[1] = Integer.parseInt(input);
 
 
             if(choice[1] == 1 || choice[1] == 2 || choice[1] == 3){
