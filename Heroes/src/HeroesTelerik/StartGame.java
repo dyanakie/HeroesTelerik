@@ -15,7 +15,7 @@ public class StartGame {
 
         Hero Conan = new Hero("Conan");
         RandomItemsFactory randomItemsFactory = new RandomItemsFactory();
-        Army heroArmy = Generator.Generate_Army('V');
+        Army heroArmy = ArmyGenerator.generateArmy('V');
         Conan.setArmy(heroArmy);
 
         Map map = new Map();
@@ -69,7 +69,7 @@ public class StartGame {
                  int loot = village.getLoot();
                  System.out.println("\n\n You gain: " + loot + " loot from the village ruins!");
                  Conan.setGold(Conan.getGold()+loot);
-                 int temp = Generator.generateExp('V');
+                 int temp = ExperienceGenerator.generateExp('V');
                  Conan.setExperience(Conan.getExperience()+temp);
                  Conan.collectItem(randomItemsFactory.getItem(ItemType.SHIELD));
                  System.out.println("You have gained " + temp + " experience!");
@@ -87,7 +87,7 @@ public class StartGame {
                  int loot = strongHold.getLoot();
                  System.out.println("\n\n You gain: " + loot + " loot from the cave ruins!");
                  Conan.setGold(Conan.getGold()+loot);
-                 int temp = Generator.generateExp('A');
+                 int temp = ExperienceGenerator.generateExp('A');
                  Conan.setExperience(Conan.getExperience()+temp);
                  Conan.collectItem(randomItemsFactory.getItem(ItemType.SWORD));
                  System.out.println("You have gained " + temp + " experience!");

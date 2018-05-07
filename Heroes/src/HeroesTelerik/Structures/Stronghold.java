@@ -1,9 +1,6 @@
 package HeroesTelerik.Structures;
 
-import HeroesTelerik.Army;
-import HeroesTelerik.Coordinate;
-import HeroesTelerik.EmptyArmyException;
-import HeroesTelerik.Generator;
+import HeroesTelerik.*;
 import HeroesTelerik.Items.Item;
 import HeroesTelerik.Items.RandomItemsFactory;
 
@@ -19,23 +16,23 @@ public class Stronghold extends Structure {
     private int loot;
 
     public Stronghold(){
-        this.army = Generator.Generate_Army('A');
-        this.loot = Generator.generateLoot('A');
+        this.army = ArmyGenerator.generateArmy('A');
+        this.loot = LootGenerator.generateLoot('A');
         this.items = (new RandomItemsFactory().generateItems());
     }
 
     public Stronghold(Coordinate position, String name) {
         this.name = name;
         this.position = position;
-        this.army = Generator.Generate_Army('A');
-        this.loot = Generator.generateLoot('A');
+        this.army = ArmyGenerator.generateArmy('A');
+        this.loot = LootGenerator.generateLoot('A');
         this.items = (new RandomItemsFactory().generateItems());
     }
 
     public Stronghold(Coordinate position, String name, Army army) throws EmptyArmyException{
         this.name = name;
         this.position = position;
-        this.loot = Generator.generateLoot('A');
+        this.loot =LootGenerator.generateLoot('A');
         this.items = (new RandomItemsFactory().generateItems());
         if(army.getSlotOneType()==null){
             throw new EmptyArmyException("An army must contain at least one unit: "+army.getSlotOneType());

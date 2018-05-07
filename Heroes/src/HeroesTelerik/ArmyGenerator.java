@@ -4,15 +4,14 @@ import HeroesTelerik.Creatures.*;
 
 import java.util.Random;
 
-public class Generator {
-
-    public static Army Generate_Army(char A) {
+public class ArmyGenerator {
+    public static Army generateArmy(char fightType) {
 
 
         Random random = new Random();
         Army army = new Army();
 
-        switch (A) {
+        switch (fightType) {
 
             case 'V':
 
@@ -58,57 +57,4 @@ public class Generator {
 
         return army;
     }
-
-    public static int generateLoot(char A){
-
-        int loot = 0;
-        Random random = new Random();
-
-        switch (A) {
-
-            case 'V':
-
-                loot = random.nextInt(1500) + 500;
-
-                return loot;
-
-
-            case 'A':
-
-                loot = random.nextInt(3000) + 2000;
-
-                return loot;
-
-        }
-
-        return loot;
-
-    }
-
-    public static int generateExp(char A){
-
-        int exp = 0;
-        Random random = new Random();
-
-        switch (A) {
-
-            case 'V':
-
-                exp = random.nextInt(800) + 500;
-
-                return exp;
-
-
-            case 'A':
-
-                exp = random.nextInt(500) + 1000;
-
-                return exp;
-
-        }
-
-        return exp;
-
-    }
-
 }
