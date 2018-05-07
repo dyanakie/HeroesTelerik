@@ -1,6 +1,8 @@
 package HeroesTelerik;
 
+import HeroesTelerik.Items.Item;
 import HeroesTelerik.Items.RandomItemsFactory;
+import HeroesTelerik.Items.Sword;
 import HeroesTelerik.MainHero.Hero;
 import HeroesTelerik.Structures.*;
 import java.io.BufferedReader;
@@ -33,6 +35,7 @@ public class StartGame {
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.ATTACK_POTION));
+
 
          Menu.newGameScreen();
          Menu.mainMenuInitial();
@@ -71,7 +74,9 @@ public class StartGame {
                  Conan.setGold(Conan.getGold()+loot);
                  int temp = ExperienceGenerator.generateExp('V');
                  Conan.setExperience(Conan.getExperience()+temp);
-                 Conan.collectItem(randomItemsFactory.getItem(ItemType.SHIELD));
+                 Item new_Item = randomItemsFactory.getItem(ItemType.SHIELD);
+                 Conan.addItems(new_Item);
+                 System.out.println("You have found a beautiful Shield called " + new_Item.getItemName());
                  System.out.println("You have gained " + temp + " experience!");
 
                  Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] = ' ';
@@ -89,7 +94,9 @@ public class StartGame {
                  Conan.setGold(Conan.getGold()+loot);
                  int temp = ExperienceGenerator.generateExp('A');
                  Conan.setExperience(Conan.getExperience()+temp);
-                 Conan.collectItem(randomItemsFactory.getItem(ItemType.SWORD));
+                 Item newItem = randomItemsFactory.getItem(ItemType.SWORD);
+                 Conan.addItems(newItem);
+                 System.out.println("You have found a beautiful sword called " + newItem.getItemName());
                  System.out.println("You have gained " + temp + " experience!");
 
                  Map.map[Conan.getCoordinate().x][Conan.getCoordinate().y] = ' ';

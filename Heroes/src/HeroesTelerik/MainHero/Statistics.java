@@ -1,6 +1,9 @@
 package HeroesTelerik.MainHero;
 
 import HeroesTelerik.Items.Item;
+import HeroesTelerik.Items.MeleeWeapon;
+import HeroesTelerik.Items.Shield;
+import HeroesTelerik.Items.Sword;
 import HeroesTelerik.Menu;
 
 import java.io.BufferedReader;
@@ -67,21 +70,112 @@ public class Statistics {
 
     private static void seeItems(Hero hero) throws IOException{
 
-        System.out.println("\n\n\n\n");
-        System.out.println("********************************************");
-        System.out.println("********************************************");
-        System.out.println("                Items\n");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int count = 1;
+        while(true) {
 
-        for (Item a:
-            hero.items ) {
+            System.out.println("\n\n\n\n");
+            System.out.println("********************************************");
+            System.out.println("********************************************");
+            System.out.println("                Items\n");
 
-            System.out.println(count + ". " + a.getItemName() + " ");
+            int count = 1;
+
+            for (Item a :
+                    hero.items) {
+
+                System.out.println(count + ". " + a.getItemName() + " ");
+                count++;
+            }
+
+
+            System.out.println("(e) for exit");
+            System.out.print("Please enter what would you like to equip or use:");
+            char choice;
+
+            String S = br.readLine();                               // check if its empty string
+            if (S.equals("") || S.length() > 1) {
+                continue;
+            }
+            choice = S.charAt(0);
+
+            switch (choice) {
+                case '1':
+
+                    equipItem(hero.items.get(0), hero);
+                    hero.items.remove(0);
+                    continue;
+
+                case '2':
+                    equipItem(hero.items.get(1), hero);
+                    hero.items.remove(1);
+                    continue;
+
+                case '3':
+                    equipItem(hero.items.get(2), hero);
+                    hero.items.remove(2);
+                    continue;
+
+                case '4':
+                    equipItem(hero.items.get(3), hero);
+                    hero.items.remove(3);
+                    continue;
+
+                case '5':
+                    equipItem(hero.items.get(4), hero);
+                    hero.items.remove(4);
+                    continue;
+
+                case '6':
+                    equipItem(hero.items.get(5), hero);
+                    hero.items.remove(5);
+                    continue;
+
+                case '7':
+                    equipItem(hero.items.get(6), hero);
+                    hero.items.remove(6);
+                    continue;
+
+                case '8':
+                    equipItem(hero.items.get(7), hero);
+                    hero.items.remove(7);
+                    continue;
+
+                case '9':
+                    equipItem(hero.items.get(8), hero);
+                    hero.items.remove(8);
+                    continue;
+
+                case 'e':
+                    return;
+
+            }
+
+
         }
 
-        Menu.pressKey();
 
+
+
+    }
+
+    private static void equipItem(Item item, Hero hero){
+
+        System.out.println(item.getClass().getName());
+
+        if(item.getClass().getSimpleName().equals("Shield")){
+            Shield temp = (Shield) item;
+            hero.items.add(hero.getShield());
+            hero.setShield(temp);
+            return;
+        }
+
+        if(item.getClass().getSimpleName().equals("Sword")){
+            Sword temp = (Sword) item;
+            hero.items.add(hero.getMainWeapon());
+            hero.setMainWeapon(temp);
+            return;
+        }
 
 
     }

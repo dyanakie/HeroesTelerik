@@ -94,10 +94,10 @@ public class Hero {
     }
 
     public int getTotalAttack() {
-        if (mainWeapon.isEquipped()) {
+
             return (getAttack()  + mainWeapon.getAttack());
-        }
-        return getAttack() ;
+
+
     }
 
     public void setAttack(int attack) {
@@ -105,10 +105,10 @@ public class Hero {
     }
 
     public int getTotalDefence() {
-        if (shield.isEquipped()) {
+
             return (getDefence() + shield.getDefense());
-        }
-        return getDefence() ;
+
+
     }
 
     public int getDefence() {
@@ -183,9 +183,6 @@ public class Hero {
         }
     }
 
-    public void collectItem(Item loot) {
-        items.add(loot);
-    }
 
     @Override
     public String toString() {
