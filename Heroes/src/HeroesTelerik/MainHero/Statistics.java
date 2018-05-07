@@ -159,8 +159,6 @@ public class Statistics {
 
     private static void equipItem(Item item, Hero hero){
 
-        System.out.println(item.getClass().getName());
-
         if(item.getClass().getSimpleName().equals("Shield")){
             Shield temp = (Shield) item;
             hero.items.add(hero.getShield());
@@ -186,13 +184,12 @@ public class Statistics {
 
             ExperiencePotion temp = (ExperiencePotion) item;
             temp.usePotion(hero);
-            return;
         }
 
 
     }
 
-    public static int showProperty(Item item){
+    private static int showProperty(Item item){
 
         if(item.getClass().getSimpleName().equals("Shield")){
             Shield temp = (Shield) item;
@@ -206,7 +203,7 @@ public class Statistics {
 
         if(item.getClass().getSimpleName().equals("AttackPotion")){
 
-            AttackPotion temp = (AttackPotion) item;System.out.print(temp.getQuantity());
+            AttackPotion temp = (AttackPotion) item;
             return temp.getQuantity();
         }
 

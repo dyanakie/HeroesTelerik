@@ -73,7 +73,7 @@ public class Shop {
             System.out.println(" You have: " + hero.getGold() + " gold");
             System.out.println();
             System.out.println(" 1. Gremlin 50g          2. Skeleton 50g         3. Centaur 50g");
-            System.out.println(" 4. Vampire 200g         5. Pegasus 200g         6. Griffon 200g");
+            System.out.println(" 4. Vampire 150g         5. Pegasus 150g         6. Griffon 150g");
             System.out.println(" 7. Dragon 300g          8. Nightmare 300g       9. Hydra 300g");
             System.out.println();
             System.out.println("e - Exit  a - Army Overview");
@@ -127,7 +127,7 @@ public class Shop {
                         continue;
                     }else{
                         hero.army.addCreature(checkCreature(hero, "Vampire"), "Vampire");
-                        hero.setGold(hero.getGold()-200);
+                        hero.setGold(hero.getGold()-150);
 
                     }
                     continue;
@@ -138,7 +138,7 @@ public class Shop {
                         continue;
                     }else{
                         hero.army.addCreature(checkCreature(hero, "Pegasus"), "Pegasus");
-                        hero.setGold(hero.getGold()-200);
+                        hero.setGold(hero.getGold()-150);
 
                     }
                     continue;
@@ -148,7 +148,7 @@ public class Shop {
                         continue;
                     }else{
                         hero.army.addCreature(checkCreature(hero, "Griffon"), "Griffon");
-                        hero.setGold(hero.getGold()-200);
+                        hero.setGold(hero.getGold()-150);
 
                     }
                     continue;

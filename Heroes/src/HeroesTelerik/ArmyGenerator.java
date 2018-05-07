@@ -48,7 +48,7 @@ public class ArmyGenerator {
                 number = random.nextInt(40) + 15;
                 army.addSlot2(new Nightmare(), number);
 
-                number = random.nextInt(50) + 20;
+                number = random.nextInt(120) + 20;
                 army.addSlot3(new Hydra(), number);
 
                 return army;

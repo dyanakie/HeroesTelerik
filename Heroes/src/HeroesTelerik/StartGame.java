@@ -34,7 +34,10 @@ public class StartGame {
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
+        Shop.shopItems.add(new Sword("Sword of Song", 40, 3000, 10));
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.ATTACK_POTION));
+        Shop.shopItems.add(randomItemsFactory.getItem(ItemType.EXP_POTION));
+
 
          Menu.newGameScreen();
          Menu.mainMenuInitial();
