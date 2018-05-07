@@ -39,7 +39,7 @@ public class Map {
 
         System.out.println("               HEROES OF TELERIK            ");
         System.out.println("********************************************");
-        System.out.printf("Player: Conan      Level %d        Turns: %d", hero.getLevel(), turns);
+        System.out.printf("Player: Conan      Level %d        Gold: %d", hero.getLevel(), hero.getGold());
         System.out.println("\n********************************************");
 
         for(int i = 0; i < map.length; i++){
@@ -57,5 +57,6 @@ public class Map {
         System.out.println("********************************************");
         System.out.println("ARMY:  |" + army.getSlot1numbers() + army.getSlotOneType() + "|" + army.getSlot2numbers()+army.getSlotTwoType() + "|" + army.getSlot3numbers()+army.getSlotThreeType() + "|");
         System.out.println("LEGEND  V - Village  A - Stronghold  C - Castle");
+        System.out.println("        # - Forest   ^ - Mountain    H - Hero");
     }
 }

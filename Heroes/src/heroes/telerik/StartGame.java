@@ -78,12 +78,16 @@ public class StartGame {
                  Village village = new Village();
                  Army enemyArmy = village.getArmy();
                  System.out.println("\n\n\n\n You enter an Enemy Village and you are ATTACKED!");
+
                  BattleScene.battleArmies(heroArmy, enemyArmy, Conan);
+
                  int loot = village.getLoot();
                  System.out.println("\n\n You gain: " + loot + " loot from the village ruins!");
                  Conan.setGold(Conan.getGold()+loot);
+
                  int temp = ExperienceGenerator.generateExp('V');
                  Conan.setExperience(Conan.getExperience()+temp);
+
                  Item new_Item = randomItemsFactory.getItem(ItemType.SHIELD);
                  Conan.addItems(new_Item);
                  System.out.println("You have found a beautiful Shield called " + new_Item.getItemName());
@@ -98,12 +102,16 @@ public class StartGame {
 
                  Army enemyArmy = strongHold.getArmy();
                  System.out.println("\n\n\n\n You enter an Enemy Stronghold and you are ATTACKED!");
+
                  BattleScene.battleArmies(heroArmy, enemyArmy, Conan);
+
                  int loot = strongHold.getLoot();
                  System.out.println("\n\n You gain: " + loot + " loot from the cave ruins!");
                  Conan.setGold(Conan.getGold()+loot);
+
                  int temp = ExperienceGenerator.generateExp('A');
                  Conan.setExperience(Conan.getExperience()+temp);
+
                  Item newItem = randomItemsFactory.getItem(ItemType.SWORD);
                  Conan.addItems(newItem);
                  System.out.println("You have found a beautiful sword called " + newItem.getItemName());

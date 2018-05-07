@@ -11,7 +11,7 @@ public class Nightmare extends Hard implements Powerable {
     private Special_Power special_power;
 
     public Nightmare(){
-        this.health = 250;
+        this.health = 180;
         this.damage = 45;
         this.type = "Nightmare";
         special_power = new Special_Power("Half Damage", Specials.HALF_DAMAGE_TAKEN);

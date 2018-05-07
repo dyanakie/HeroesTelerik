@@ -11,7 +11,7 @@ public class Hydra extends Hard implements Powerable{
     private Special_Power special_power;
 
     public Hydra(){
-        this.health = 250;
+        this.health = 300;
         this.damage = 45;
         this.type = "Hydra";
         special_power = new Special_Power("Multi Attack", Specials.MULTIHIT);
