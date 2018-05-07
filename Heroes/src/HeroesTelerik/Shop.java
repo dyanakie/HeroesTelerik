@@ -36,11 +36,11 @@ public class Shop {
             System.out.println();
             System.out.print("Please enter your choice: ");
 
-            String S = br.readLine();                               // check if its empty string
-            if(S.equals("")){
+            String input = br.readLine();                               // check if its empty string
+            if(input.equals("")){
                 continue;
             }
-            choice = S.charAt(0);
+            choice = input.charAt(0);
 
             switch (choice) {
                 case '1':
@@ -80,11 +80,11 @@ public class Shop {
             System.out.println("What would you like to buy: ");
             char choice;
 
-            String S = br.readLine();                               // check if its empty string
-            if(S.equals("")){
+            String input = br.readLine();                               // check if its empty string
+            if(input.equals("")){
                 continue;
             }
-            choice = S.charAt(0);
+            choice = input.charAt(0);
 
             switch (choice) {
                 case 'e':
@@ -221,14 +221,14 @@ public class Shop {
             System.out.println("What would you like to buy: ");
             char choice;
 
-            String S = br.readLine();                               // check if its empty string
-            if(S.equals("") || S.length() > 1){
+            String input = br.readLine();                               // check if its empty string
+            if(input.equals("") || input.length() > 1){
                 continue;
             }
-            choice = S.charAt(0);
+            choice = input.charAt(0);
 
-            if(Character.isDigit(S.charAt(0))) {
-                if (shopItems.size() < Integer.parseInt(S)) {
+            if(Character.isDigit(input.charAt(0))) {
+                if (shopItems.size() < Integer.parseInt(input)) {
                     System.out.println("No such item!");
                     continue;
                 }
