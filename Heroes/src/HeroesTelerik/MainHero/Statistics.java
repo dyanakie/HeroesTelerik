@@ -1,9 +1,6 @@
 package HeroesTelerik.MainHero;
 
-import HeroesTelerik.Items.Item;
-import HeroesTelerik.Items.MeleeWeapon;
-import HeroesTelerik.Items.Shield;
-import HeroesTelerik.Items.Sword;
+import HeroesTelerik.Items.*;
 import HeroesTelerik.Menu;
 
 import java.io.BufferedReader;
@@ -23,7 +20,7 @@ public class Statistics {
             System.out.println();
 
             System.out.println("      _,.                             NAME: " + hero.getName());
-            System.out.println("    ,` -.)");
+            System.out.println("    ,` -.)                            LEVEL: " + hero.getLevel());
             System.out.println("   ( _/-\\\\-._");
             System.out.println("  /,|`--._,-^|            ,           CLASS:    " + hero.getHeroClass());
             System.out.println("  \\_| |`-._/||          ,'|           ATTACK:    " + hero.getTotalAttack());
@@ -83,6 +80,7 @@ public class Statistics {
 
             for (Item a :
                     hero.items) {
+
 
                 System.out.println(count + ". " + a.getItemName() + " ");
                 count++;
@@ -174,6 +172,20 @@ public class Statistics {
             Sword temp = (Sword) item;
             hero.items.add(hero.getMainWeapon());
             hero.setMainWeapon(temp);
+            return;
+        }
+
+        if(item.getClass().getSimpleName().equals("AttackPotion")){
+
+            AttackPotion temp = (AttackPotion) item;
+            temp.usePotion(hero);
+            return;
+        }
+
+        if(item.getClass().getSimpleName().equals("ExperiencePotion")){
+
+            ExperiencePotion temp = (ExperiencePotion) item;
+            temp.usePotion(hero);
             return;
         }
 
