@@ -36,7 +36,6 @@ public class StartGame {
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.SHIELD));
         Shop.shopItems.add(randomItemsFactory.getItem(ItemType.ATTACK_POTION));
 
-
          Menu.newGameScreen();
          Menu.mainMenuInitial();
 

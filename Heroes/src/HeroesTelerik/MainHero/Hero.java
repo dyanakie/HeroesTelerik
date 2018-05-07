@@ -15,8 +15,8 @@ import java.util.List;
 
 public class Hero {
     private static final int INITIAL_GOLD = 500;
-    private static final int BASE_ATTACK = 5;
-    private static final int BASE_DEFENCE = 5;
+    private static final int BASE_ATTACK = 0;
+    private static final int BASE_DEFENCE = 0;
     private static final int INITIAL_X_COORDINATE = 1;
     private static final int INITIAL_Y_COORDINATE = 1;
     private static final int INITIAL_EXPERIENCE = 1000;
@@ -33,7 +33,6 @@ public class Hero {
     private Shield shield;
     private MeleeWeapon mainWeapon;
     public List<Item> items;
-    private List<Sword> swords;
     public Army army;
     private int gold;
 
@@ -48,7 +47,6 @@ public class Hero {
         this.mainWeapon = INITIAL_WEAPON;
         this.items = new ArrayList<>();
         this.army = new Army();
-        this.swords = new ArrayList<>();
         this.gold = INITIAL_GOLD;
 
     }
@@ -112,7 +110,7 @@ public class Hero {
     }
 
     public int getDefence() {
-        return defence +defence*getLevel();
+        return defence +5*getLevel();
     }
 
     public void setDefence(int defence) {
