@@ -36,6 +36,9 @@ public class Hero {
     public Army army;
     private int gold;
 
+    public Hero(){
+    }
+
     public Hero(String name) {
         this.name = name;
         this.experience = INITIAL_EXPERIENCE;
