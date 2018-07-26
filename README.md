@@ -1,4 +1,4 @@
-# Hulk
+# Team Hulk
 https://github.com/MMishev/HeroesTelerik
   - George Georgiev (TwelveMonkeys)
   - Dragomir Yanakiev (Dyanakie)
